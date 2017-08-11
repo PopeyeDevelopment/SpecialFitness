@@ -2,25 +2,40 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
+    <item android:title="User">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_profile"
+                    android:icon="@drawable/ic_menu_profile"
+                    android:title="Profile" />
+            </group>
+        </menu>
+    </item>
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+    <item android:title="Workouts">
+        <menu>
+            <group android:checkableBehavior="single">
+            <item
+                android:id="@+id/nav_workout_planner"
+                android:icon="@drawable/ic_workout_planner"
+                android:title="Workout Planner" />
+                <item
+                    android:id="@+id/nav_workout_saved"
+                    android:icon="@drawable/ic_saved_workouts"
+                    android:title="Saved Workouts" />
+            </group>
+        </menu>
+    </item>
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
             android:title="Gallery" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
             android:title="Slideshow" />
         <item
             android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
             android:title="Tools" />
-    </group>
 
     <item android:title="Communicate">
         <menu>
