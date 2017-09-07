@@ -13,41 +13,36 @@
         </menu>
     </item>
 
-    <item android:title="Workouts">
+    <item android:title="Workout Diary">
         <menu>
             <group android:checkableBehavior="single">
             <item
                 android:id="@+id/nav_workout_planner"
                 android:icon="@drawable/ic_workout_planner"
-                android:title="Workout Planner" />
-                <item
-                    android:id="@+id/nav_workout_saved"
-                    android:icon="@drawable/ic_saved_workouts"
-                    android:title="Saved Workouts" />
+                android:title="@string/nav_workout_planner" />
+            <item
+                android:id="@+id/nav_workout_saved"
+                android:icon="@drawable/ic_saved_workouts"
+                android:title="@string/nav_workout_savedworkouts" />
             </group>
         </menu>
     </item>
-        <item
-            android:id="@+id/nav_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:title="Tools" />
 
-    <item android:title="Communicate">
+    <item android:title="Nutrition Diary">
         <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_food_diary"
+                    android:icon="@drawable/ic_food_diary"
+                    android:title="@string/nav_food_diary" />
+                <item
+                    android:id="@+id/nav_food_supplement_diary"
+                    android:title="@string/nav_supplement_diary" />
+                <item
+                    android:id="@+id/nav_water_diary"
+                    android:icon="@drawable/ic_nutrition_water_diary"
+                    android:title="@string/nav_water_diary" />
+            </group>
         </menu>
     </item>
-
 </menu>

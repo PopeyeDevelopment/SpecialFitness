@@ -1,8 +1,22 @@
 <resources>
     <string name="app_name">Special Fitness</string>
 
+    <string name="action_settings">Settings</string>
+    <string name="action_help">Help Center</string>
+
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_workout_planner">Workouts</string>
+    <string name="nav_workout_savedworkouts">Saved Workouts</string>
+    <string name="nav_food_diary">Food</string>
+    <string name="nav_supplement_diary">Supplement</string>
+    <string name="nav_water_diary">Water</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_user_profile">Profile</string>
 
-    <string name="action_settings">Settings</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="title_activity_main2">Main2Activity</string>
 </resources>
