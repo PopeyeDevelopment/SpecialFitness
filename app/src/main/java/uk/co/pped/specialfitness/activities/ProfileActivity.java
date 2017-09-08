@@ -1,15 +1,14 @@
-package uk.co.pped.specialfitness;
+package uk.co.pped.specialfitness.activities;
 
-import android.support.v7.app.ActionBar;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 
-public class ProfileActivity extends AppCompatActivity implements ProfileFragment.OnFragmentInteractionListener{
+import uk.co.pped.specialfitness.fragments.ProfileFragment;
+import uk.co.pped.specialfitness.R;
+
+public class ProfileActivity extends AppCompatActivity implements ProfileFragment.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
