@@ -1,14 +1,19 @@
 package uk.co.pped.specialfitness.fragments;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import uk.co.pped.specialfitness.R;
+import uk.co.pped.specialfitness.model.UserModel;
+import uk.co.pped.specialfitness.utility.ApplicationHelper;
 
 
 /**
@@ -23,6 +28,11 @@ public class ProfileFragment extends AbstractBaseFragment {
 
     public ProfileFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
 
     /**

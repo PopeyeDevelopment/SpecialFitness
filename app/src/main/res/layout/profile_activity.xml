@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:contentDescription="Profile Cover"
     android:fitsSystemWindows="true"
-    tools:context="uk.co.pped.specialfitness.activities.ProfileActivity">
+    tools:context="uk.co.pped.specialfitness.activities.ProfileActivity"
+    android:orientation="vertical">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -21,6 +23,17 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_profile" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:contentDescription="@string/profile_background_image_description"
+        android:src="@android:color/holo_purple" />
 
-</android.support.design.widget.CoordinatorLayout>
+    <include
+        layout="@layout/content_profile"
+        android:layout_width="match_parent"
+        android:layout_height="312dp"
+        />
+
+</LinearLayout>

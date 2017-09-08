@@ -1,5 +1,7 @@
 package uk.co.pped.specialfitness.activities;
 
+import static uk.co.pped.specialfitness.fragments.AbstractBaseFragment.OnFragmentInteractionListener;
+
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,7 +10,9 @@ import android.support.v7.widget.Toolbar;
 import uk.co.pped.specialfitness.fragments.ProfileFragment;
 import uk.co.pped.specialfitness.R;
 
-public class ProfileActivity extends AppCompatActivity implements ProfileFragment.OnFragmentInteractionListener {
+public class ProfileActivity extends AppCompatActivity implements OnFragmentInteractionListener {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +22,6 @@ public class ProfileActivity extends AppCompatActivity implements ProfileFragmen
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
     }
 
     @Override
