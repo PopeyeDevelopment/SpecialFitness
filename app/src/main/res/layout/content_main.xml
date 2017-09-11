@@ -6,7 +6,21 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="uk.co.pped.specialfitness.activities.MainActivity"
-    tools:showIn="@layout/app_bar_main"
     android:id="@+id/content_frame">
 
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/ads_banner"
+        android:layout_width="320dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="514dp"
+        app:adSize="BANNER"
+        app:adUnitId="My Ad Unit Id"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteY="514dp"
+        />
 </android.support.constraint.ConstraintLayout>
