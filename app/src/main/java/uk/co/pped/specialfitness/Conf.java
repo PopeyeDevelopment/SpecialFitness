@@ -10,5 +10,5 @@ public final class Conf {
 
     public static final String PACKAGE = "uk.co.pped.specialfitness";
 
-    public static SimpleDateFormat SIMPLE_DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy hh:mm");
+    public static SimpleDateFormat SIMPLE_DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
 }

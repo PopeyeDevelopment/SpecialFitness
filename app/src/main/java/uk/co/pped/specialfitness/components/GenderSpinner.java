@@ -3,6 +3,7 @@ package uk.co.pped.specialfitness.components;
 import android.app.Activity;
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -10,6 +11,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import android.support.v7.widget.AppCompatSpinner;
 
+import uk.co.pped.specialfitness.BuildConfig;
 import uk.co.pped.specialfitness.R;
 
 /**
@@ -28,6 +30,13 @@ public class GenderSpinner extends AppCompatSpinner  {
 
     public GenderSpinner(Context context, AttributeSet attrs) {
         super(context, attrs);
+        if (BuildConfig.FLAVOR.equals("free")) {
+            Log.e("GenderSpinner","This is the FREE version");
+        } else if (BuildConfig.FLAVOR.equals("paid")) {
+            Log.e("GenderSpinner","This is the PAID version");
+        } else {
+            Log.e("GenderSpinner","UNKNOWN VERSION");
+        }
         spinnerSetup();
     }
 

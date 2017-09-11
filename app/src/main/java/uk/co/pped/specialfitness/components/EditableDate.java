@@ -12,31 +12,44 @@ import android.widget.TextView;
 import java.util.Calendar;
 import java.util.TimeZone;
 
+import uk.co.pped.specialfitness.Conf;
+
 /**
  * Created by matthewi on 08/09/2017.
  */
 
-public class EditableDate extends AppCompatEditText implements View.OnClickListener, DatePickerDialog.OnDateSetListener {
+public class EditableDate extends AppCompatEditText{
 
     private final Context context;
+
+    private static Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
+
+    private void updateLabel() {
+        this.setText(Conf.SIMPLE_DATE_FORMAT.format(calendar.getTime()));
+    }
+
+    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+            calendar.set(Calendar.YEAR, year);
+            calendar.set(Calendar.MONTH, monthOfYear);
+            calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            updateLabel();
+        }
+    };
 
     public EditableDate(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.context = context;
-    }
+        this.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DatePickerDialog dialog = new DatePickerDialog(v.getContext(), date,
+                        calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
+                        calendar.get(Calendar.DAY_OF_MONTH));
 
-    @Override
-    public void onClick(View v) {
-        Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
-
-        DatePickerDialog dialog = new DatePickerDialog(context, this,
-                calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
-                calendar.get(Calendar.DAY_OF_MONTH));
-
-        dialog.show();
-    }
-
-    @Override
-    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                dialog.show();
+            }
+        });
     }
 }

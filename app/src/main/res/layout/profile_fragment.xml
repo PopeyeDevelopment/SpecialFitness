@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="uk.co.pped.specialfitness.fragments.ProfileFragment"
-    tools:showIn="@layout/profile_activity">
+    tools:showIn="@layout/profile_activity"
+    android:focusableInTouchMode="true">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -42,14 +43,14 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:ems="9"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    android:background="@android:color/transparent" />
             </TableRow>
 
             <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_marginTop="10dp">
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -59,13 +60,15 @@
                     android:text="Gender"
                     android:textSize="18dp" />
 
+
                 <uk.co.pped.specialfitness.components.GenderSpinner
                     android:id="@+id/gender_spinner"
                     android:layout_width="190dp"
                     android:layout_height="30dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp" />
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/transparent"/>
 
             </TableRow>
 
@@ -81,7 +84,8 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:text="Date of Birth"
-                    android:textSize="18dp" />
+                    android:textSize="18dp"
+                    />
 
                 <uk.co.pped.specialfitness.components.EditableDate
                     android:id="@+id/DateOfBirth"
@@ -92,7 +96,8 @@
                     android:layout_marginTop="10dp"
                     android:ems="9"
                     android:inputType="date"
-                    android:focusable="false"/>
+                    android:focusable="false"
+                    android:background="@android:color/transparent"/>
 
             </TableRow>
 
@@ -110,14 +115,16 @@
                     android:text="Height"
                     android:textSize="18dp" />
 
-                <TextView
-                    android:id="@+id/textView"
+                <EditText
+                    android:id="@+id/height"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
-                    android:text="195cm" />
+                    android:ems="9"
+                    android:inputType="text"
+                    android:background="@android:color/transparent"/>
 
             </TableRow>
         </TableLayout>
