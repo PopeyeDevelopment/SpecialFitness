@@ -14,11 +14,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 import uk.co.pped.specialfitness.R;
 
 
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends AbstractBaseActivity
         implements NavigationView.OnNavigationItemSelectedListener{
+
+    private AdView bannerAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +38,14 @@ public class MainActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+        MobileAds.initialize(this, "ca-app-pub-3231685289597329~6828974063");
+
+        bannerAd = (AdView) findViewById(R.id.ads_banner);
+        AdRequest request = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
+        bannerAd.loadAd(request);
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);

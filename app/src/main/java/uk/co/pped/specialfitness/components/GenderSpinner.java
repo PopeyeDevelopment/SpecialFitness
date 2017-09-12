@@ -13,6 +13,7 @@ import android.support.v7.widget.AppCompatSpinner;
 
 import uk.co.pped.specialfitness.BuildConfig;
 import uk.co.pped.specialfitness.R;
+import uk.co.pped.specialfitness.utility.ApplicationHelper;
 
 /**
  * Created by matthewi on 07/09/2017.
@@ -30,13 +31,6 @@ public class GenderSpinner extends AppCompatSpinner  {
 
     public GenderSpinner(Context context, AttributeSet attrs) {
         super(context, attrs);
-        if (BuildConfig.FLAVOR.equals("free")) {
-            Log.e("GenderSpinner","This is the FREE version");
-        } else if (BuildConfig.FLAVOR.equals("paid")) {
-            Log.e("GenderSpinner","This is the PAID version");
-        } else {
-            Log.e("GenderSpinner","UNKNOWN VERSION");
-        }
         spinnerSetup();
     }
 
