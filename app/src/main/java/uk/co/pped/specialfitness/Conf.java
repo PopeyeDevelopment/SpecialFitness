@@ -30,4 +30,12 @@ public final class Conf {
         }
         return PACKAGE_MAIN;
     }
+
+    public static final String APP_ID() {
+        if (APPLICATION_FLAVOR.equals(ApplicationHelper.FLAVOR_FREE)) {
+            return ApplicationHelper.getContext().getString(R.string.app_id);
+        }
+        return null;
+    }
+
 }

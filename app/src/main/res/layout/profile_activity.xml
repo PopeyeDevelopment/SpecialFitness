@@ -24,12 +24,15 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <ImageView
-        android:id="@+id/imageView"
+    <uk.co.pped.specialfitness.components.CurvedImageView
+        android:id="@+id/profile_cover"
         android:layout_width="match_parent"
         android:layout_height="175dp"
         android:contentDescription="@string/profile_background_image_description"
-        android:src="@android:color/holo_purple" />
+        android:elevation="10dp"
+        app:curvature="20dp"
+
+        />
 
     <include
         layout="@layout/content_profile"

@@ -18,6 +18,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 
+import uk.co.pped.specialfitness.Conf;
 import uk.co.pped.specialfitness.R;
 
 
@@ -39,8 +40,8 @@ public class MainActivity extends AbstractBaseActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        MobileAds.initialize(this, "ca-app-pub-3231685289597329~6828974063");
-
+        MobileAds.initialize(this, getString(R.string.app_id));
+        String value = Conf.APP_ID();
         bannerAd = (AdView) findViewById(R.id.ads_banner);
         AdRequest request = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
