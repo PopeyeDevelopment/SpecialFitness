@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -15,13 +14,13 @@ import android.view.View;
 import java.io.IOException;
 
 import uk.co.pped.specialfitness.components.CurvedImageView;
-import uk.co.pped.specialfitness.fragments.ProfileFragment;
 import uk.co.pped.specialfitness.R;
 
 public class ProfileActivity extends AppCompatActivity implements OnFragmentInteractionListener {
 
     private static final int PICK_IMAGE_REQUEST = 1;
     private static final String TYPE_IMAGE = "image/*";
+    private static final String TITLE_IMAGE_PICKER = "Select Profile Cover";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +38,7 @@ public class ProfileActivity extends AppCompatActivity implements OnFragmentInte
                 if (view == findViewById(R.id.profile_cover)) {
                     Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
                     intent.setType(TYPE_IMAGE);
-                    startActivityForResult(Intent.createChooser(intent, "Select Profile Cover"), PICK_IMAGE_REQUEST);
+                    startActivityForResult(Intent.createChooser(intent, TITLE_IMAGE_PICKER), PICK_IMAGE_REQUEST);
                 }
             }
         });
