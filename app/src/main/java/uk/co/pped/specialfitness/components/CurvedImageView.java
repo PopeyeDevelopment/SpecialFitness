@@ -2,6 +2,7 @@ package uk.co.pped.specialfitness.components;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -72,6 +73,9 @@ public class CurvedImageView extends AppCompatImageView {
 
     }
 
+    private static final int PICK_IMAGE_REQUEST = 1;
+    private static final String TYPE_IMAGE = "image/*";
+
     Path clipPath;
 
     int curvatureDirection = CurvatureDirection.OUTWARD;
@@ -102,11 +106,14 @@ public class CurvedImageView extends AppCompatImageView {
 
     int curvatureHeight = 50;
 
+    private final Context context;
+
     private PorterDuffXfermode porterDuffXfermode;
     private String TAG = "CURVED_IMAGE_VIEW";
 
     CurvedImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        this.context = context;
         init(context, attrs);
     }
 
@@ -256,4 +263,5 @@ public class CurvedImageView extends AppCompatImageView {
     private int getDpForPixel(DisplayMetrics displayMetrics, int pixel) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, pixel, displayMetrics);
     }
+
 }
