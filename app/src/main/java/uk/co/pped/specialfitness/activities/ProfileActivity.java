@@ -32,16 +32,7 @@ public class ProfileActivity extends AppCompatActivity implements OnFragmentInte
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         CurvedImageView imageView = findViewById(R.id.profile_cover);
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (view == findViewById(R.id.profile_cover)) {
-                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                    intent.setType(TYPE_IMAGE);
-                    startActivityForResult(Intent.createChooser(intent, TITLE_IMAGE_PICKER), PICK_IMAGE_REQUEST);
-                }
-            }
-        });
+
     }
 
     @Override
