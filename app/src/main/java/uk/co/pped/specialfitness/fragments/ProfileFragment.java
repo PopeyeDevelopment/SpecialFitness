@@ -26,8 +26,10 @@ import uk.co.pped.specialfitness.utility.ApplicationHelper;
  */
 public class ProfileFragment extends AbstractBaseFragment {
 
+    private final UserModel user;
+
     public ProfileFragment() {
-        // Required empty public constructor
+        this.user = UserModel.getInstance();
     }
 
     @Override

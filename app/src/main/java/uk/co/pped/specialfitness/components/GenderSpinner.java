@@ -11,8 +11,11 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import android.support.v7.widget.AppCompatSpinner;
 
+import org.apache.commons.lang3.StringUtils;
+
 import uk.co.pped.specialfitness.BuildConfig;
 import uk.co.pped.specialfitness.R;
+import uk.co.pped.specialfitness.model.UserModel;
 import uk.co.pped.specialfitness.utility.ApplicationHelper;
 
 /**
@@ -25,6 +28,10 @@ public class GenderSpinner extends AppCompatSpinner  {
 
     private final ArrayAdapter arrayAdapter = new ArrayAdapter(this.getContext(), R.layout.support_simple_spinner_dropdown_item, genderOptions);;
 
+    private String value;
+
+    private final UserModel user = UserModel.getInstance();
+
     public GenderSpinner(Context context) {
         this(context, null);
     }
@@ -34,22 +41,25 @@ public class GenderSpinner extends AppCompatSpinner  {
         spinnerSetup();
     }
 
+
     private void spinnerSetup() {
         this.setAdapter(arrayAdapter);
+        int userValuePosition = arrayAdapter.getPosition(user.getGender());
+        this.setSelection(userValuePosition);
         this.setOnItemSelectedListener(new OnItemSelectListener());
     }
 
     public class OnItemSelectListener extends Activity implements AdapterView.OnItemSelectedListener {
+
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-            String posValue = parent.getItemAtPosition(pos).toString();
-            Toast.makeText(view.getContext(), genderOptions[pos], Toast.LENGTH_LONG).show();
+            String genderVal = parent.getItemAtPosition(pos).toString();
+            user.setGender(genderVal);
+            Toast.makeText(view.getContext(), genderVal, Toast.LENGTH_LONG).show();
         }
 
         @Override
         public void onNothingSelected(AdapterView<?> arg0) {
-            // TODO Auto-generated method stub
-
         }
     }
 }
