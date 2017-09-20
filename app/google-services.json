@@ -1,0 +1,105 @@
+{
+  "project_info": {
+    "project_number": "613704641731",
+    "firebase_url": "https://specialfitness-e4d2c.firebaseio.com",
+    "project_id": "specialfitness-e4d2c",
+    "storage_bucket": "specialfitness-e4d2c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613704641731:android:37890d566f896936",
+        "android_client_info": {
+          "package_name": "uk.co.pped.specialfitness.paid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "613704641731-c5qvlmd7ren1u3k5al5pn6poob09jdfg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "uk.co.pped.specialfitness.paid",
+            "certificate_hash": "85d2ce20f6976091d5e654e3175da84a0b284431"
+          }
+        },
+        {
+          "client_id": "613704641731-cq3p6ls6o5ejkpqaao226qmjok0sjc2p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-4TEw5dWFfMw04X_d_P91r0ZKZ7KGJUE"
+        },
+        {
+          "current_key": "AIzaSyDZfuvywFYevCe5IdvkzeYAY71PXEool-Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "613704641731-cq3p6ls6o5ejkpqaao226qmjok0sjc2p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613704641731:android:ce4a16bcdd3735cc",
+        "android_client_info": {
+          "package_name": "uk.co.pped.specialfitness.free"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "613704641731-rhhh9usj14m8se7jvk30aqkkti1p14q4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "uk.co.pped.specialfitness.free",
+            "certificate_hash": "85d2ce20f6976091d5e654e3175da84a0b284431"
+          }
+        },
+        {
+          "client_id": "613704641731-cq3p6ls6o5ejkpqaao226qmjok0sjc2p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-4TEw5dWFfMw04X_d_P91r0ZKZ7KGJUE"
+        },
+        {
+          "current_key": "AIzaSyDZfuvywFYevCe5IdvkzeYAY71PXEool-Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "613704641731-cq3p6ls6o5ejkpqaao226qmjok0sjc2p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

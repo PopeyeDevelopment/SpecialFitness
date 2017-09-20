@@ -22,16 +22,16 @@
             android:isScrollContainer="true">
 
             <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_marginTop="10dp">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
                     android:text="Nickname"
                     android:textSize="18dp" />
 
@@ -39,79 +39,78 @@
                     android:id="@+id/nickname_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_gravity="right|center"
+                    android:layout_margin="10dp"
+                    android:background="@android:color/transparent"
                     android:ems="9"
-                    android:inputType="text"
-                    android:background="@android:color/transparent" />
+                    android:gravity="right"
+                    android:inputType="text" />
             </TableRow>
 
             <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_marginTop="10dp">
+                android:layout_margin="10dp">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
                     android:text="Gender"
                     android:textSize="18dp" />
 
 
                 <uk.co.pped.specialfitness.components.GenderSpinner
                     android:id="@+id/gender_spinner"
-                    android:layout_width="190dp"
-                    android:layout_height="30dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@android:color/transparent"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_gravity="right|center"
+                    android:layout_margin="10dp"
+                    android:background="@android:color/transparent"
+                    android:ems="9"
+                    android:gravity="right" />
 
             </TableRow>
 
             <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
+                android:layout_margin="10dp"
                 android:layout_marginTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_margin="10dp"
                     android:text="Date of Birth"
                     android:textSize="18dp"
-                    />
+                    app:layout_constraintLeft_toLeftOf="@+id/DateOfBirth" />
 
                 <uk.co.pped.specialfitness.components.EditableDate
                     android:id="@+id/DateOfBirth"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right|center"
+                    android:layout_margin="10dp"
+                    android:background="@android:color/transparent"
                     android:ems="9"
-                    android:inputType="date"
                     android:focusable="false"
-                    android:background="@android:color/transparent"/>
+                    android:gravity="right"
+                    android:inputType="date" />
 
             </TableRow>
 
             <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_marginTop="10dp">
+                android:layout_margin="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_margin="10dp"
                     android:text="Height"
                     android:textSize="18dp" />
 
@@ -119,13 +118,15 @@
                     android:id="@+id/height"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="right|center"
+                    android:layout_margin="10dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginRight="10dp"
                     android:layout_marginTop="10dp"
+                    android:background="@android:color/transparent"
                     android:ems="9"
-                    android:inputType="text"
-                    android:background="@android:color/transparent"/>
-
+                    android:gravity="right"
+                    android:inputType="text" />
             </TableRow>
         </TableLayout>
 
