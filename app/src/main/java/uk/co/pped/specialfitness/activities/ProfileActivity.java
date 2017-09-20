@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 
 import java.io.IOException;
 
@@ -18,39 +17,34 @@ import uk.co.pped.specialfitness.R;
 
 public class ProfileActivity extends AppCompatActivity implements OnFragmentInteractionListener {
 
-    private static final int PICK_IMAGE_REQUEST = 1;
-    private static final String TYPE_IMAGE = "image/*";
-    private static final String TITLE_IMAGE_PICKER = "Select Profile Cover";
+
+    public ProfileActivity() {
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_activity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-
+        toolbar.setFocusableInTouchMode(true);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        CurvedImageView imageView = findViewById(R.id.profile_cover);
-
     }
 
     @Override
     public void onFragmentInteraction(Uri uri) {
-
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK
+        if (requestCode == CurvedImageView.PICK_IMAGE_REQUEST && resultCode == RESULT_OK
                 && data != null && data.getData() != null) {
             Uri uri = data.getData();
 
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
-
                 CurvedImageView imageView = (CurvedImageView) findViewById(R.id.profile_cover);
                 imageView.setImageBitmap(bitmap);
             } catch (IOException e) {

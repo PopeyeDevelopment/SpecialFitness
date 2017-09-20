@@ -1,6 +1,7 @@
 package uk.co.pped.specialfitness.components;
 
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
@@ -16,6 +17,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.graphics.Palette;
@@ -27,7 +29,12 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewOutlineProvider;
 
+import java.sql.Array;
+import java.util.Arrays;
+
 import uk.co.pped.specialfitness.R;
+import uk.co.pped.specialfitness.model.UserModel;
+import uk.co.pped.specialfitness.utility.ApplicationHelper;
 import uk.co.pped.specialfitness.utility.GradientProviderHelper;
 import uk.co.pped.specialfitness.utility.PathProviderHelper;
 
@@ -73,10 +80,7 @@ public class CurvedImageView extends AppCompatImageView {
 
     }
 
-    private static final int PICK_IMAGE_REQUEST = 1;
-    private static final String TYPE_IMAGE = "image/*";
-
-    Path clipPath;
+    Path clipPath = new Path();
 
     int curvatureDirection = CurvatureDirection.OUTWARD;
 
@@ -101,31 +105,44 @@ public class CurvedImageView extends AppCompatImageView {
     int gradientStartColor = Color.TRANSPARENT;
     int gradientEndColor = Color.TRANSPARENT;
 
-    Paint shadeColor;
-    Paint paint;
+    Paint shadeColor = new Paint(Paint.ANTI_ALIAS_FLAG);
+    Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
+    /** @param curvatureHeight for setting the curvature height, default of 50 */
     int curvatureHeight = 50;
 
     private final Context context;
 
-    private PorterDuffXfermode porterDuffXfermode;
+    private PorterDuffXfermode porterDuffXfermode = new PorterDuffXfermode((PorterDuff.Mode.CLEAR));
     private String TAG = "CURVED_IMAGE_VIEW";
+
+    public static final int PICK_IMAGE_REQUEST = 1;
+    private static final String TYPE_IMAGE = "image/*";
+    private static final String TITLE_IMAGE_PICKER = "Select Profile Cover";
+
+    View.OnClickListener onClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            if (view == findViewById(R.id.profile_cover)) {
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType(TYPE_IMAGE);
+                ((Activity) context).startActivityForResult(Intent.createChooser(intent, TITLE_IMAGE_PICKER), PICK_IMAGE_REQUEST);
+            }
+        }
+    };
+
+    private UserModel user = UserModel.getInstance();
 
     CurvedImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.context = context;
-        init(context, attrs);
+        this.setImageBitmap(user.getProfileCover());
+        this.setOnClickListener(onClickListener);
+        init(attrs);
     }
 
-    private void init(Context context, AttributeSet attrs) {
-        porterDuffXfermode = new PorterDuffXfermode((PorterDuff.Mode.CLEAR));
-
-        paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private void init(AttributeSet attrs) {
         paint.setColor(Color.WHITE);
-
-        shadeColor = new Paint(Paint.ANTI_ALIAS_FLAG);
-
-        clipPath = new Path();
 
         TypedArray styledAttrs = context.obtainStyledAttributes(attrs, Styleable.CURVED_IMAGE_VIEW, 0, 0);
         if (styledAttrs.hasValue(Styleable.CURVATURE)) {
@@ -139,13 +156,13 @@ public class CurvedImageView extends AppCompatImageView {
 
         if (styledAttrs.hasValue(Styleable.TINT_ALPHA)) {
             if (styledAttrs.getInt(Styleable.TINT_ALPHA, 0) <= 255
-                && styledAttrs.getInt(Styleable.TINT_ALPHA, 0) >= 0) {
+                    && styledAttrs.getInt(Styleable.TINT_ALPHA, 0) >= 0) {
                 tintAlpha = styledAttrs.getInt(Styleable.TINT_ALPHA, 0);
             }
         }
 
         if (styledAttrs.hasValue(Styleable.TINT_MODE)
-                && styledAttrs.getInt(Styleable.TINT_MODE, 0) ==  TintMode.MANUAL) {
+                && styledAttrs.getInt(Styleable.TINT_MODE, 0) == TintMode.MANUAL) {
             tintMode = TintMode.MANUAL;
         }
 
@@ -162,23 +179,34 @@ public class CurvedImageView extends AppCompatImageView {
             gradientDirection = styledAttrs.getInt(Styleable.GRADIENT_DIRECTION, 0);
         }
 
-//                /* Default start color is transparent*/
-//        gradientStartColor = styledAttrs.getColor(Styleable.GRADIENT_COLOR_START, Color.TRANSPARENT);
-//
-//        /* Default end color is transparent*/
-//        gradientEndColor = styledAttrs.getColor(Styleable.GRADIENT_COLOR_END, Color.TRANSPARENT);
+        /* Default start color is transparent*/
+        gradientStartColor = styledAttrs.getColor(Styleable.GRADIENT_COLOR_START, Color.TRANSPARENT);
+
+        /* Default end color is transparent*/
+        gradientEndColor = styledAttrs.getColor(Styleable.GRADIENT_COLOR_END, Color.TRANSPARENT);
 
         styledAttrs.recycle();
 
-        BitmapDrawable bitmapDrawable = null;
-        if (getDrawable() != null) {
-            bitmapDrawable = (BitmapDrawable) this.getDrawable();
-        } else if (getBackground() != null) {
-            bitmapDrawable = (BitmapDrawable) getBackground();
+        setBackgroundColorFromBitmap();
+    }
+
+    private void setBackgroundColorFromBitmap() {
+        Bitmap bitmap = null;
+        if (getDrawable() != null &&
+                getDrawable() instanceof BitmapDrawable) {
+            bitmap = ((BitmapDrawable) this.getDrawable()).getBitmap();
+        } else if (getBackground() != null &&
+                getBackground() instanceof BitmapDrawable) {
+            bitmap = ((BitmapDrawable) getBackground()).getBitmap();
+        } else if (getDrawable() != null &&
+                getDrawable() instanceof ColorDrawable) {
+            ColorDrawable colorDraw = (ColorDrawable)this.getDrawable();
+            int[] colors = {colorDraw.getColor()};
+            bitmap = Bitmap.createBitmap(colors, width, height, Bitmap.Config.ARGB_8888);
         }
 
-        if (bitmapDrawable != null) {
-            pickColorFromBitmap(bitmapDrawable.getBitmap());
+        if (bitmap != null) {
+            pickColorFromBitmap(bitmap);
         }
     }
 
@@ -206,6 +234,7 @@ public class CurvedImageView extends AppCompatImageView {
             }
         });
     }
+
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -253,15 +282,23 @@ public class CurvedImageView extends AppCompatImageView {
 
         Shader mShader = GradientProviderHelper.getShader(gradientStartColor, gradientEndColor, gradientDirection, canvas.getWidth(), canvas.getHeight());
         shadeColor.setShader(mShader);
+
         canvas.drawPaint(shadeColor);
 
         canvas.drawPath(clipPath, paint);
         canvas.restoreToCount(saveCount);
         paint.setXfermode(null);
+
     }
 
     private int getDpForPixel(DisplayMetrics displayMetrics, int pixel) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, pixel, displayMetrics);
+    }
+
+    @Override
+    public void setImageBitmap(Bitmap bm) {
+        super.setImageBitmap(bm);
+        user.setProfileCover(bm);
     }
 
 }
