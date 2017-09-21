@@ -220,20 +220,28 @@ public class CurvedImageView extends AppCompatImageView {
                 tintPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
                 if (tintMode == TintMode.AUTOMATIC) {
                     tintPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+                    int rgbColor = Color.WHITE;
                     if (palette.getDarkVibrantColor(defaultColor) != 0) {
-                        tintPaint.setColor(Color.parseColor("#" + Math.abs(palette.getDarkVibrantColor(defaultColor))));
+                        rgbColor = Math.abs(palette.getDarkVibrantColor(defaultColor));
                     } else if (palette.getDarkMutedColor(defaultColor) != 0) {
-                        tintPaint.setColor(Color.parseColor("#" + Math.abs(palette.getDarkMutedColor(defaultColor))));
-                    } else {
-                        tintPaint.setColor(Color.WHITE);
+                        rgbColor = Math.abs(palette.getDarkMutedColor(defaultColor));
                     }
+                    tintPaint.setColor(getColorFromRGBInt(rgbColor));
                 } else {
                     tintPaint.setColor(tintColor);
                     tintPaint.setAlpha(tintAlpha);
                 }
             }
+
+            private int getColorFromRGBInt(final int rgbColor) {
+                int r = (rgbColor >> 16) & 0xFF;
+                int g = (rgbColor >> 8) & 0xFF;
+                int b = rgbColor & 0xFF;
+                return Color.rgb(r, g, b);
+            }
         });
     }
+
 
 
     @Override
