@@ -20,12 +20,13 @@ public final class UserModel extends AbstractBaseModel {
 
     private Bitmap profileCover;
 
-    private static final int DEFAULT_DATE_OF_BIRTH_AGE = 18;
+    private static final int DEFAULT_AGE = 18;
+
 
     /** @param gender property for holding the users Gender. Default is "Male". */
     private String gender = "Male";
 
-    private Date dateOfBirth = getDefaultDateOfBirth();
+    private Date dateOfBirth;
 
     private UserModel() {
         if (instance != null) {
@@ -40,12 +41,6 @@ public final class UserModel extends AbstractBaseModel {
         }
 
         return instance;
-    }
-
-    private Date getDefaultDateOfBirth() {
-        Calendar cal = Calendar.getInstance(TimeZone.getDefault());
-        cal.set(Calendar.YEAR, cal.get(Calendar.YEAR) - DEFAULT_DATE_OF_BIRTH_AGE);
-        return cal.getTime();
     }
 
     public void setProfileCover(Bitmap profileCover) {
@@ -68,14 +63,24 @@ public final class UserModel extends AbstractBaseModel {
         return this.dateOfBirth;
     }
 
-
     public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public String getDateOfBirthAsString() {
-        return Conf.SIMPLE_DATE_FORMAT.format(this.dateOfBirth);
-
+    /**
+     * Gets the year the user was born, if no date of birth
+     * has been set this it will return today's date minus
+     * {@link #DEFAULT_AGE}.
+     *
+     * @return year born or default age year.
+     */
+    public int getYearOfBirth() {
+        Calendar cal = Calendar.getInstance(TimeZone.getDefault());
+        if (this.dateOfBirth != null) {
+            cal.setTime(this.dateOfBirth);
+            return cal.get(Calendar.YEAR);
+        }
+        return cal.get(Calendar.YEAR) - DEFAULT_AGE;
     }
 
     @Override

@@ -13,6 +13,10 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="DropDownViewTheme">
+        <item name="android:textColor">@color/textColorSettings</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 

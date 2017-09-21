@@ -8,10 +8,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.support.v7.widget.AppCompatSpinner;
 
 import org.apache.commons.lang3.StringUtils;
+import org.w3c.dom.Text;
 
 import uk.co.pped.specialfitness.BuildConfig;
 import uk.co.pped.specialfitness.R;
@@ -26,7 +28,7 @@ public class GenderSpinner extends AppCompatSpinner  {
 
     private final String[] genderOptions = getResources().getStringArray(R.array.gender_option);
 
-    private final ArrayAdapter arrayAdapter = new ArrayAdapter(this.getContext(), R.layout.support_simple_spinner_dropdown_item, genderOptions);;
+    private final ArrayAdapter arrayAdapter = new ArrayAdapter(this.getContext(), R.layout.gender_spinner_text_view, genderOptions);;
 
     private String value;
 
@@ -47,6 +49,7 @@ public class GenderSpinner extends AppCompatSpinner  {
         int userValuePosition = arrayAdapter.getPosition(user.getGender());
         this.setSelection(userValuePosition);
         this.setOnItemSelectedListener(new OnItemSelectListener());
+
     }
 
     public class OnItemSelectListener extends Activity implements AdapterView.OnItemSelectedListener {

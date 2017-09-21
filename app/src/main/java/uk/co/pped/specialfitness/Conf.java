@@ -16,7 +16,7 @@ public final class Conf {
 
     public static final String PACKAGE_PAID = PACKAGE_MAIN + ".paid";
 
-    public static SimpleDateFormat SIMPLE_DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
+    public static SimpleDateFormat SIMPLE_DATE_FORMAT = new SimpleDateFormat("dd-MMM-yyyy");
 
     public static final String APPLICATION_FLAVOR = BuildConfig.FLAVOR;
 

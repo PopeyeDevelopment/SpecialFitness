@@ -120,6 +120,8 @@ public class CurvedImageView extends AppCompatImageView {
     private static final String TYPE_IMAGE = "image/*";
     private static final String TITLE_IMAGE_PICKER = "Select Profile Cover";
 
+    private Bitmap bitmap;
+
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -191,22 +193,22 @@ public class CurvedImageView extends AppCompatImageView {
     }
 
     private void setBackgroundColorFromBitmap() {
-        Bitmap bitmap = null;
+        Bitmap bm = null;
         if (getDrawable() != null &&
                 getDrawable() instanceof BitmapDrawable) {
-            bitmap = ((BitmapDrawable) this.getDrawable()).getBitmap();
+            bm = ((BitmapDrawable) this.getDrawable()).getBitmap();
         } else if (getBackground() != null &&
                 getBackground() instanceof BitmapDrawable) {
-            bitmap = ((BitmapDrawable) getBackground()).getBitmap();
+            bm = ((BitmapDrawable) getBackground()).getBitmap();
         } else if (getDrawable() != null &&
                 getDrawable() instanceof ColorDrawable) {
             ColorDrawable colorDraw = (ColorDrawable)this.getDrawable();
             int[] colors = {colorDraw.getColor()};
-            bitmap = Bitmap.createBitmap(colors, width, height, Bitmap.Config.ARGB_8888);
+            bm = Bitmap.createBitmap(colors, width, height, Bitmap.Config.ARGB_8888);
         }
 
-        if (bitmap != null) {
-            pickColorFromBitmap(bitmap);
+        if (bm != null) {
+            pickColorFromBitmap(bm);
         }
     }
 
@@ -242,24 +244,25 @@ public class CurvedImageView extends AppCompatImageView {
         });
     }
 
-
-
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
-        width = getMeasuredWidth();
-        height = getMeasuredHeight();
+        // We only want to do this if we have an image.
+        if (bitmap != null) {
+            width = getMeasuredWidth();
+            height = getMeasuredHeight();
 
-        clipPath = PathProviderHelper.getClipPath(width, height, curvatureHeight, curvatureDirection, gravity);
+            clipPath = PathProviderHelper.getClipPath(width, height, curvatureHeight, curvatureDirection, gravity);
 
-        ViewCompat.setElevation(this, ViewCompat.getElevation(this));
+            ViewCompat.setElevation(this, ViewCompat.getElevation(this));
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            try {
-                setOutlineProvider(getOutlineProvider());
-            } catch (Exception e) {
-                Log.d(TAG, e.getMessage());
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                try {
+                    setOutlineProvider(getOutlineProvider());
+                } catch (Exception e) {
+                    Log.d(TAG, e.getMessage());
+                }
             }
         }
     }
@@ -306,6 +309,7 @@ public class CurvedImageView extends AppCompatImageView {
     @Override
     public void setImageBitmap(Bitmap bm) {
         super.setImageBitmap(bm);
+        this.bitmap = bm;
         user.setProfileCover(bm);
     }
 

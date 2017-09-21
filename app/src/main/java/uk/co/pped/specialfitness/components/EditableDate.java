@@ -5,9 +5,9 @@ import android.content.Context;
 import android.support.v7.widget.AppCompatEditText;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.CalendarView;
 import android.widget.DatePicker;
-import android.widget.TextView;
+
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -29,15 +29,18 @@ public class EditableDate extends AppCompatEditText{
     public EditableDate(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
+        if (user.getDateOfBirth() != null) {
+            updateLabel(user.getDateOfBirth());
+        }
     }
 
     private void init() {
-        calendar.setTime(user.getDateOfBirth());
         this.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 DatePickerDialog dialog = new DatePickerDialog(v.getContext(), date,
-                        calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
+                        user.getYearOfBirth(),
+                        calendar.get(Calendar.MONTH),
                         calendar.get(Calendar.DAY_OF_MONTH));
 
                 dialog.show();
@@ -45,9 +48,8 @@ public class EditableDate extends AppCompatEditText{
         });
     }
 
-
-    private void updateLabel() {
-        this.setText(Conf.SIMPLE_DATE_FORMAT.format(calendar.getTime()));
+    private void updateLabel(Date dateOfBirth) {
+        this.setText(Conf.SIMPLE_DATE_FORMAT.format(dateOfBirth));
     }
 
     private void updateUser() {
@@ -62,7 +64,7 @@ public class EditableDate extends AppCompatEditText{
             calendar.set(Calendar.YEAR, year);
             calendar.set(Calendar.MONTH, monthOfYear);
             calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-            updateLabel();
+            updateLabel(calendar.getTime());
             updateUser();
         }
     };

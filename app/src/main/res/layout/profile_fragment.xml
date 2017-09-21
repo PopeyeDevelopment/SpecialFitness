@@ -33,7 +33,9 @@
                     android:layout_marginEnd="10dp"
                     android:layout_marginStart="10dp"
                     android:text="Nickname"
-                    android:textSize="18dp" />
+                    android:textColor="@color/textColorSettings"
+                    android:textSize="15dp"
+                    />
 
                 <EditText
                     android:id="@+id/nickname_text"
@@ -42,9 +44,13 @@
                     android:layout_gravity="right|center"
                     android:layout_margin="10dp"
                     android:background="@android:color/transparent"
+                    android:textColor="@color/textColorSettings"
                     android:ems="9"
                     android:gravity="right"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:maxLength="25"
+                    android:imeOptions="actionDone"/>
             </TableRow>
 
             <TableRow
@@ -58,8 +64,9 @@
                     android:layout_margin="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginStart="10dp"
+                    android:textColor="@color/textColorSettings"
                     android:text="Gender"
-                    android:textSize="18dp" />
+                    android:textSize="15dp" />
 
 
                 <uk.co.pped.specialfitness.components.GenderSpinner
@@ -68,9 +75,10 @@
                     android:layout_height="25dp"
                     android:layout_gravity="right|center"
                     android:layout_margin="10dp"
-                    android:background="@android:color/transparent"
                     android:ems="9"
-                    android:gravity="right" />
+                    android:gravity="right|center"
+                    android:popupTheme="@style/DropDownViewTheme"></uk.co.pped.specialfitness.components.GenderSpinner>
+
 
             </TableRow>
 
@@ -85,8 +93,9 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:text="Date of Birth"
-                    android:textSize="18dp"
-                    app:layout_constraintLeft_toLeftOf="@+id/DateOfBirth" />
+                    android:textColor="@color/textColorSettings"
+                    android:textSize="15dp"
+                     />
 
                 <uk.co.pped.specialfitness.components.EditableDate
                     android:id="@+id/DateOfBirth"
@@ -95,6 +104,7 @@
                     android:layout_gravity="right|center"
                     android:layout_margin="10dp"
                     android:background="@android:color/transparent"
+                    android:textColor="@color/textColorSettings"
                     android:ems="9"
                     android:focusable="false"
                     android:gravity="right"
@@ -112,7 +122,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:text="Height"
-                    android:textSize="18dp" />
+                    android:textColor="@color/textColorSettings"
+                    android:textSize="15dp" />
 
                 <EditText
                     android:id="@+id/height"
@@ -124,6 +135,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="10dp"
                     android:background="@android:color/transparent"
+                    android:textColor="@color/textColorSettings"
                     android:ems="9"
                     android:gravity="right"
                     android:inputType="text" />
