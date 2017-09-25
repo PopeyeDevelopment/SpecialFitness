@@ -30,13 +30,7 @@ public class GenderSpinner extends AppCompatSpinner  {
 
     private final ArrayAdapter arrayAdapter = new ArrayAdapter(this.getContext(), R.layout.gender_spinner_text_view, genderOptions);;
 
-    private String value;
-
     private final UserModel user = UserModel.getInstance();
-
-    public GenderSpinner(Context context) {
-        this(context, null);
-    }
 
     public GenderSpinner(Context context, AttributeSet attrs) {
         super(context, attrs);

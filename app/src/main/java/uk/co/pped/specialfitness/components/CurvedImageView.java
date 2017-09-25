@@ -284,7 +284,7 @@ public class CurvedImageView extends AppCompatImageView {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        int saveCount = canvas.saveLayer(0, 0, getWidth(), getHeight(), null, Canvas.ALL_SAVE_FLAG);
+        int saveCount = canvas.saveLayer(0, 0, getWidth(), getHeight(), null);
         super.onDraw(canvas);
         paint.setXfermode(porterDuffXfermode);
         if (tintPaint != null) {
