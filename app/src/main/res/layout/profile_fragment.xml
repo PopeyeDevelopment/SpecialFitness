@@ -1,25 +1,23 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="uk.co.pped.specialfitness.fragments.ProfileFragment"
-    tools:showIn="@layout/profile_activity"
-    android:focusableInTouchMode="true">
-
-    <ScrollView
+ <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="uk.co.pped.specialfitness.fragments.ProfileFragment"
+        tools:showIn="@layout/profile_activity"
+        android:focusableInTouchMode="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="none"
         android:layout_weight="1"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        android:scrollbars="none">
 
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:isScrollContainer="true">
+            android:layout_height="wrap_content"
+            android:elevation="10dp"
+            android:isScrollContainer="true"
+            android:orientation="vertical">
 
             <TableRow
                 android:layout_width="wrap_content"
@@ -32,25 +30,25 @@
                     android:layout_margin="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginStart="10dp"
-                    android:text="Nickname"
+                    android:text="@string/nickname_header_text"
+                    android:labelFor="@+id/nickname_text"
                     android:textColor="@color/textColorSettings"
-                    android:textSize="15dp"
-                    />
+                    android:textSize="15sp" />
 
                 <EditText
                     android:id="@+id/nickname_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="right|center"
+                    android:layout_gravity="center|end"
                     android:layout_margin="10dp"
                     android:background="@android:color/transparent"
-                    android:textColor="@color/textColorSettings"
                     android:ems="9"
-                    android:gravity="right"
+                    android:gravity="end"
+                    android:imeOptions="actionDone"
                     android:inputType="text"
-                    android:maxLines="1"
                     android:maxLength="25"
-                    android:imeOptions="actionDone"/>
+                    android:maxLines="1"
+                    android:textColor="@color/textColorSettings" />
             </TableRow>
 
             <TableRow
@@ -64,19 +62,20 @@
                     android:layout_margin="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginStart="10dp"
+                    android:text="@string/gender_header_text"
+                    android:labelFor="@+id/gender_spinner"
                     android:textColor="@color/textColorSettings"
-                    android:text="Gender"
-                    android:textSize="15dp" />
+                    android:textSize="15sp" />
 
 
                 <uk.co.pped.specialfitness.components.GenderSpinner
                     android:id="@+id/gender_spinner"
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
-                    android:layout_gravity="right|center"
+                    android:layout_gravity="center|end"
                     android:layout_margin="10dp"
                     android:ems="9"
-                    android:gravity="right|center"
+                    android:gravity="center|end"
                     android:popupTheme="@style/DropDownViewTheme"></uk.co.pped.specialfitness.components.GenderSpinner>
 
 
@@ -92,56 +91,55 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="Date of Birth"
+                    android:text="@string/dob_header_text"
+                    android:labelFor="@id/DateOfBirth"
                     android:textColor="@color/textColorSettings"
-                    android:textSize="15dp"
-                     />
+                    android:textSize="15sp" />
 
                 <uk.co.pped.specialfitness.components.EditableDate
                     android:id="@+id/DateOfBirth"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_gravity="right|center"
+                    android:layout_gravity="center|end"
                     android:layout_margin="10dp"
                     android:background="@android:color/transparent"
-                    android:textColor="@color/textColorSettings"
                     android:ems="9"
                     android:focusable="false"
-                    android:gravity="right"
-                    android:inputType="date" />
+                    android:gravity="end"
+                    android:inputType="date"
+                    android:textColor="@color/textColorSettings" />
 
             </TableRow>
 
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_margin="10dp">
+            <!--<TableRow-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_margin="10dp">-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:text="Height"
-                    android:textColor="@color/textColorSettings"
-                    android:textSize="15dp" />
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_margin="10dp"-->
+                    <!--android:text="Height"-->
+                    <!--android:textColor="@color/textColorSettings"-->
+                    <!--android:textSize="15dp" />-->
 
-                <EditText
-                    android:id="@+id/height"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right|center"
-                    android:layout_margin="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@android:color/transparent"
-                    android:textColor="@color/textColorSettings"
-                    android:ems="9"
-                    android:gravity="right"
-                    android:inputType="text" />
-            </TableRow>
+                <!--<EditText-->
+                    <!--android:id="@+id/height"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="right|center"-->
+                    <!--android:layout_margin="10dp"-->
+                    <!--android:layout_marginEnd="10dp"-->
+                    <!--android:layout_marginRight="10dp"-->
+                    <!--android:layout_marginTop="10dp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:ems="9"-->
+                    <!--android:gravity="right"-->
+                    <!--android:inputType="text"-->
+                    <!--android:textColor="@color/textColorSettings" />-->
+            <!--</TableRow>-->
         </TableLayout>
 
-    </ScrollView>
+ </ScrollView>
 
-</FrameLayout>
