@@ -189,7 +189,7 @@ public class CurvedImageView extends AppCompatImageView {
 
         styledAttrs.recycle();
 
-        setBackgroundColorFromBitmap();
+        //setBackgroundColorFromBitmap();
     }
 
     private void setBackgroundColorFromBitmap() {

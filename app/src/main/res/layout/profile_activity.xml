@@ -2,17 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:contentDescription="Profile Cover"
     android:fitsSystemWindows="true"
-    tools:context="uk.co.pped.specialfitness.activities.ProfileActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="uk.co.pped.specialfitness.activities.ProfileActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fitsSystemWindows="true"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
@@ -26,15 +26,14 @@
 
 
     <uk.co.pped.specialfitness.components.CurvedImageView
-            android:id="@+id/profile_cover"
-            android:layout_width="match_parent"
-            android:layout_height="175dp"
-            android:clickable="true"
-            android:contentDescription="@string/profile_background_image_description"
-            android:elevation="20dp"
-            android:scaleType="fitXY"
-            app:curvature="20dp" />
-
+        android:id="@+id/profile_cover"
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:clickable="true"
+        android:contentDescription="@string/profile_background_image_description"
+        android:elevation="20dp"
+        android:scaleType="fitXY"
+        app:curvature="20dp" />
 
 
     <include

@@ -5,7 +5,7 @@ android {
     buildToolsVersion "26.0.1"
     defaultConfig {
         applicationId "uk.co.pped.specialfitness"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -27,7 +27,6 @@ android {
             applicationId "uk.co.pped.specialfitness.free"
             versionName "1.0-free"
             buildConfigField "boolean", "PAID_VERSION", "false"
-            minSdkVersion 19
             targetSdkVersion 26
             testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
         }
@@ -36,7 +35,6 @@ android {
             applicationId "uk.co.pped.specialfitness.paid"
             versionName "1.0-paid"
             buildConfigField "boolean", "PAID_VERSION", "true"
-            minSdkVersion 19
             targetSdkVersion 26
             testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
         }
