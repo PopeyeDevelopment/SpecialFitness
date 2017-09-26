@@ -18,7 +18,7 @@ import uk.co.pped.specialfitness.R;
 /**
  * Created by matthewi on 08/09/2017.
  */
-public class ProfileActivity extends AppCompatActivity implements OnFragmentInteractionListener {
+public class ProfileActivity extends AbstractBaseActivity implements OnFragmentInteractionListener {
 
 
     public ProfileActivity() {}
@@ -27,11 +27,10 @@ public class ProfileActivity extends AppCompatActivity implements OnFragmentInte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_activity);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setFocusableInTouchMode(true);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setSupportedActionBar();
     }
+
+
 
     @Override
     public void onFragmentInteraction(Uri uri) {

@@ -2,6 +2,7 @@ package uk.co.pped.specialfitness.activities;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.google.android.gms.ads.AdRequest;
@@ -16,6 +17,13 @@ import uk.co.pped.specialfitness.utility.ApplicationHelper;
  */
 
 public abstract class AbstractBaseActivity extends AppCompatActivity  {
+
+    protected void setSupportedActionBar() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setFocusableInTouchMode(true);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
 
     protected void removeAdsFromContext() {
         if (Conf.APPLICATION_FLAVOR.equals(ApplicationHelper.FLAVOR_PAID)) {

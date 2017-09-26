@@ -11,7 +11,7 @@ import uk.co.pped.specialfitness.fragments.AbstractBaseFragment;
 /**
  * Created by matthewi on 08/09/2017.
  */
-public class SettingsActivity extends AppCompatActivity implements AbstractBaseFragment.OnFragmentInteractionListener {
+public class SettingsActivity extends AbstractBaseActivity implements AbstractBaseFragment.OnFragmentInteractionListener {
 
     public SettingsActivity() {}
 
@@ -19,10 +19,7 @@ public class SettingsActivity extends AppCompatActivity implements AbstractBaseF
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setFocusableInTouchMode(true);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setSupportedActionBar();
     }
 
     @Override
