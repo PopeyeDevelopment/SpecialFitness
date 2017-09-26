@@ -15,8 +15,8 @@
     <string name="nav_settings">Settings</string>
     <string name="nav_user_profile">Profile</string>
 
-    <string name="title_activity_profile">ProfileActivity</string>
-    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_profile">@string/nav_user_profile</string>
+    <string name="title_activity_settings">@string/action_settings</string>
 
     <string name="title_activity_advertisement_activity">advertisement_activity</string>
 
