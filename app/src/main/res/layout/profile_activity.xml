@@ -36,13 +36,13 @@
         android:focusable="true" />
 
 
-    <fragment android:id="@+id/fragment"
+    <fragment
+        android:id="@+id/fragment"
         android:name="uk.co.pped.specialfitness.fragments.ProfileFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:layout="@layout/profile_fragment"
-        />
+        tools:layout="@layout/profile_fragment" />
 
 
 </LinearLayout>

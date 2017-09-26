@@ -9,25 +9,36 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import java.io.IOException;
 
 import uk.co.pped.specialfitness.components.CurvedImageView;
 import uk.co.pped.specialfitness.R;
+import uk.co.pped.specialfitness.model.UserModel;
 
 /**
  * Created by matthewi on 08/09/2017.
  */
 public class ProfileActivity extends AbstractBaseActivity implements OnFragmentInteractionListener {
 
+    private UserModel user;
 
-    public ProfileActivity() {}
+    public ProfileActivity() {
+        this.user = UserModel.getInstance();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_activity);
         setSupportedActionBar();
+
+        // If user has no profile cover then hide image view
+        if (user.getProfileCover() != null) {
+            CurvedImageView view = findViewById(R.id.profile_cover);
+            view.setVisibility(View.GONE);
+        }
     }
 
 
