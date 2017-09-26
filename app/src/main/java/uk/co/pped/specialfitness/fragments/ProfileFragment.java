@@ -37,6 +37,12 @@ public class ProfileFragment extends AbstractBaseFragment {
         super.onCreate(savedInstanceState);
     }
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        super.onCreateView(inflater, container, savedInstanceState);
+        return inflater.inflate(R.layout.profile_fragment, container, false);
+    }
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.

@@ -6,7 +6,7 @@ android {
     defaultConfig {
         applicationId "uk.co.pped.specialfitness"
         minSdkVersion 21
-        targetSdkVersion 26
+        targetSdkVersion 21
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -27,7 +27,6 @@ android {
             applicationId "uk.co.pped.specialfitness.free"
             versionName "1.0-free"
             buildConfigField "boolean", "PAID_VERSION", "false"
-            targetSdkVersion 26
             testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
         }
         paid {
@@ -35,26 +34,37 @@ android {
             applicationId "uk.co.pped.specialfitness.paid"
             versionName "1.0-paid"
             buildConfigField "boolean", "PAID_VERSION", "true"
-            targetSdkVersion 26
             testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
         }
     }
 }
 
+ext {
+    supportedLib_version = '26.1.0'
+}
+
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:26.+'
-    implementation 'com.android.support:design:26.+'
+    // Google Support Libraries
+    implementation "com.android.support:support-v4:$supportedLib_version"
+    implementation "com.android.support:appcompat-v7:$supportedLib_version"
+    implementation "com.android.support:design:$supportedLib_version"
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    implementation 'com.android.support:support-v4:26.0.2'
-    implementation 'com.android.support:support-vector-drawable:26.0.2'
-    compile 'com.google.android.gms:play-services:11.2.2'
-    compile 'com.google.firebase:firebase-ads:11.2.2'
-    compile 'com.android.support:cardview-v7:26.0.+'
-    compile 'com.android.support:recyclerview-v7:26.0.+'
-    compile 'org.apache.commons:commons-lang3:3.5'
+    implementation "com.android.support:support-vector-drawable:$supportedLib_version"
+    implementation "com.android.support:cardview-v7:$supportedLib_version"
+    implementation "com.android.support:recyclerview-v7:$supportedLib_version"
+    implementation "com.android.support:mediarouter-v7:$supportedLib_version"
+    // Google Play Services
+    implementation 'com.google.android.gms:play-services:11.2.2'
     implementation 'com.google.android.gms:play-services-ads:11.2.0'
+
+    // Google Firebase Services
+    implementation 'com.google.firebase:firebase-ads:11.2.2'
+
+    compile 'org.apache.commons:commons-lang3:3.5'
     testImplementation 'junit:junit:4.12'
+
     androidTestImplementation 'com.android.support.test:runner:1.0.0'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.0'
+
 }

@@ -18,8 +18,8 @@
     <string name="title_activity_profile">ProfileActivity</string>
     <string name="title_activity_settings">Settings</string>
 
-    <string name="profile_background_image_description">Profile Cover</string>
     <string name="title_activity_advertisement_activity">advertisement_activity</string>
+
 
     <!-- User Profile Headers -->
     <string name="nickname_header_text">Nickname</string>
@@ -28,4 +28,7 @@
     <string name="gender_help_text"></string>
     <string name="dob_header_text">Date Of Birth</string>
     <string name="dob_help_text"></string>
+    <string name="profile_cover">Profile Cover</string>
+    <string name="profile_background_image_description">Profile Cover</string>
+
 </resources>
