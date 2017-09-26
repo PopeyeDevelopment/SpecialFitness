@@ -71,17 +71,24 @@ public class MainActivity extends AbstractBaseActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+        boolean result = super.onOptionsItemSelected(item);
+
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
+        Intent intent = null;
+
         if (id == R.id.action_settings) {
+            intent = new Intent(this, SettingsActivity.class);
+            result = true;
+        } else if (id == R.id.action_help_center) {
             return true;
         }
 
-        return super.onOptionsItemSelected(item);
+        if (intent != null) {
+            startActivity(intent);
+        }
+
+        return result;
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
