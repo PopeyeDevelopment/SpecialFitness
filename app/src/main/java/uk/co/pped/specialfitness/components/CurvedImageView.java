@@ -135,7 +135,7 @@ public class CurvedImageView extends AppCompatImageView {
 
     private UserModel user = UserModel.getInstance();
 
-    CurvedImageView(Context context, AttributeSet attrs) {
+    public CurvedImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.context = context;
         this.setImageBitmap(user.getProfileCover());
@@ -284,7 +284,8 @@ public class CurvedImageView extends AppCompatImageView {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        int saveCount = canvas.saveLayer(0, 0, getWidth(), getHeight(), null);
+        int saveCount = getSaveLayerCount(canvas);
+
         super.onDraw(canvas);
         paint.setXfermode(porterDuffXfermode);
         if (tintPaint != null) {
@@ -297,9 +298,18 @@ public class CurvedImageView extends AppCompatImageView {
         canvas.drawPaint(shadeColor);
 
         canvas.drawPath(clipPath, paint);
-        canvas.restoreToCount(saveCount);
+        canvas.restoreToCount(canvas.getSaveCount());
         paint.setXfermode(null);
 
+    }
+
+    private int getSaveLayerCount(Canvas canvas) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            return canvas.saveLayer(0, 0, getWidth(), getHeight(), null);
+        } else {
+            // Older versions of android use the deprecated method still.
+            return canvas.saveLayer(0, 0, getWidth(), getHeight(), null,Canvas.ALL_SAVE_FLAG);
+        }
     }
 
     private int getDpForPixel(DisplayMetrics displayMetrics, int pixel) {
