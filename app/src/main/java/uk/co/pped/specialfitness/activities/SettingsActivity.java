@@ -1,16 +1,17 @@
 package uk.co.pped.specialfitness.activities;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import uk.co.pped.specialfitness.R;
+import uk.co.pped.specialfitness.fragments.AbstractBaseFragment;
 
 /**
  * Created by matthewi on 08/09/2017.
  */
-
-public class SettingsActivity extends AppCompatActivity {
+public class SettingsActivity extends AppCompatActivity implements AbstractBaseFragment.OnFragmentInteractionListener {
 
     public SettingsActivity() {}
 
@@ -24,4 +25,7 @@ public class SettingsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+    }
 }

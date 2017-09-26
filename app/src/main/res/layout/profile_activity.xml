@@ -5,7 +5,6 @@
     android:id="@+id/profile_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:contentDescription="@string/profile_cover"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context="uk.co.pped.specialfitness.activities.ProfileActivity">
@@ -37,11 +36,13 @@
         android:focusable="true" />
 
 
-    <include
-        layout="@layout/content_profile"
+    <fragment android:id="@+id/fragment"
+        android:name="uk.co.pped.specialfitness.fragments.ProfileFragment"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:visibility="visible" />
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:layout="@layout/profile_fragment"
+        />
+
 
 </LinearLayout>

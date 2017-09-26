@@ -15,11 +15,13 @@ import java.io.IOException;
 import uk.co.pped.specialfitness.components.CurvedImageView;
 import uk.co.pped.specialfitness.R;
 
+/**
+ * Created by matthewi on 08/09/2017.
+ */
 public class ProfileActivity extends AppCompatActivity implements OnFragmentInteractionListener {
 
 
-    public ProfileActivity() {
-    }
+    public ProfileActivity() {}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
