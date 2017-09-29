@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <PreferenceCategory
+        android:title="Units"
+        android:layout="@layout/settings_header_layout">
+
+        <ListPreference
+            android:key="weight_units"
+            android:entries="@array/weight_unit_entries"
+            android:entryValues="@array/weight_unit_values"
+            android:title="@string/weight_unit_title"
+            android:summary="%s"
+            android:layout="@layout/preferences_basic_layout" />
+        <ListPreference
+            android:key="height_units"
+            android:entries="@array/height_unit_entries"
+            android:entryValues="@array/height_unit_values"
+            android:title="@string/height_unit_title"
+            android:summary="%s"
+            android:layout="@layout/preferences_basic_layout" />
+        <ListPreference
+            android:key="distance_units"
+            android:entries="@array/distance_unit_entries"
+            android:entryValues="@array/distance_unit_values"
+            android:title="@string/distance_unit_title"
+            android:summary="%s"
+            android:layout="@layout/preferences_basic_layout" />
+        <ListPreference
+            android:key="liquid_units"
+            android:entries="@array/liquid_unit_entries"
+            android:entryValues="@array/liquid_unit_values"
+            android:title="@string/liquid_unit_title"
+            android:summary="%s"
+            android:layout="@layout/preferences_basic_layout" />
+
+    </PreferenceCategory>
+</PreferenceScreen>

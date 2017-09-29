@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+
     <application>
 
         <!-- This meta-data tag is required to use Google Play Services. -->
@@ -12,14 +13,15 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity
-            android:name="uk.co.pped.specialfitness.free.advertisement_banner"
-            android:label="@string/title_activity_advertisement_banner" /> <!-- Include the AdActivity configChanges and theme. -->
-        <activity
-            android:name="com.google.android.gms.ads.AdActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-            android:theme="@android:style/Theme.Translucent" />
-        <activity android:name="uk.co.pped.specialfitness.free.MainActivity"></activity>
+
+        <!--<activity-->
+            <!--android:name="uk.co.pped.specialfitness.free.advertisement_banner"-->
+            <!--android:label="@string/title_activity_advertisement_banner" /> &lt;!&ndash; Include the AdActivity configChanges and theme. &ndash;&gt;-->
+        <!--<activity-->
+            <!--android:name="com.google.android.gms.ads.AdActivity"-->
+            <!--android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"-->
+            <!--android:theme="@android:style/Theme.Translucent" />-->
+        <!--<activity android:name="uk.co.pped.specialfitness.free.MainActivity"></activity>-->
     </application>
 
 </manifest>

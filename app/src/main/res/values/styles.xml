@@ -7,7 +7,9 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
     </style>
+
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
@@ -15,17 +17,33 @@
     </style>
 
     <style name="DropDownViewTheme">
-        <item name="android:textColor">@color/textColorSettings</item>
+        <item name="android:textColor">@color/summaryTextColor</item>
         <item name="android:background">@android:color/transparent</item>
     </style>
 
     <style name="ProfileFragmentTheme">
-        <item name="android:textColor">@color/textColorSettings</item>
+        <item name="android:textColor">@color/summaryTextColor</item>
         <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="SettingsBasicTheme">
+    </style>
+    <style name="SettingsTitleTheme" parent="SettingsBasicTheme">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/titleTextColor</item>
+    </style>
+    <style name="SettingsSummaryTheme" parent="SettingsBasicTheme">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/summaryTextColor</item>
+    </style>
+    <style name="SettingsHeaderTheme" parent="SettingsBasicTheme">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">18sp</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 
 </resources>

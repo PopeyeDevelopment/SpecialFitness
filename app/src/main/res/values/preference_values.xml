@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Weight Units Values and Entries -->
+    <string-array name="weight_unit_entries">
+        <item>Kilograms (kg)</item>
+        <item>Stone (s)</item>
+        <item>Pounds (lbs)</item>
+    </string-array>
+    <string-array name="weight_unit_values">
+        <item>kg</item>
+        <item>Stone</item>
+        <item>lbs</item>
+    </string-array>
+
+    <!-- Height Units Values and Entries -->
+    <string-array name="height_unit_entries">
+        <item>Feet/Inches (ft/in</item>
+        <item>Centimeters (cm)</item>
+    </string-array>
+    <string-array name="height_unit_values">
+        <item>ft/in</item>
+        <item>Stone</item>
+    </string-array>
+
+    <!-- Distance Units Values and Entries -->
+    <string-array name="distance_unit_entries">
+        <item>Miles</item>
+        <item>Kilometres (km)</item>
+    </string-array>
+    <string-array name="distance_unit_values">
+        <item>miles</item>
+        <item>km</item>
+    </string-array>
+
+    <!-- Liquid Units Values and Entries -->
+    <string-array name="liquid_unit_entries">
+        <item>Milliliters (ml)</item>
+        <item>Litres (L)</item>
+    </string-array>
+    <string-array name="liquid_unit_values">
+        <item>ml</item>
+        <item>l</item>
+    </string-array>
+</resources>

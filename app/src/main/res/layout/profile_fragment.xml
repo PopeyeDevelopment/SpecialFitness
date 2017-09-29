@@ -41,7 +41,7 @@
                         android:layout_marginStart="10dp"
                         android:labelFor="@+id/nickname_text"
                         android:text="@string/nickname_header_text"
-                        android:theme="@style/ProfileFragmentTheme" />
+                        android:theme="@style/SettingsTitleTheme" />
 
                     <EditText
                         android:id="@+id/nickname_text"
@@ -56,7 +56,7 @@
                         android:inputType="text"
                         android:maxLength="25"
                         android:maxLines="1"
-                        android:textSize="15sp" />
+                        android:theme="@style/SettingsSummaryTheme" />
                 </TableRow>
 
                 <TableRow
@@ -72,7 +72,7 @@
                         android:layout_marginStart="10dp"
                         android:labelFor="@+id/gender_spinner"
                         android:text="@string/gender_header_text"
-                        android:theme="@style/ProfileFragmentTheme" />
+                        android:theme="@style/SettingsTitleTheme" />
 
 
                     <uk.co.pped.specialfitness.components.GenderSpinner
@@ -97,7 +97,7 @@
                         android:layout_margin="10dp"
                         android:labelFor="@id/DateOfBirth"
                         android:text="@string/dob_header_text"
-                        android:theme="@style/ProfileFragmentTheme" />
+                        android:theme="@style/SettingsTitleTheme" />
 
                     <uk.co.pped.specialfitness.components.EditableDate
                         android:id="@+id/DateOfBirth"
