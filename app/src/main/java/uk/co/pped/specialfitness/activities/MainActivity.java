@@ -20,6 +20,7 @@ import com.google.android.gms.ads.MobileAds;
 import uk.co.pped.specialfitness.Conf;
 import uk.co.pped.specialfitness.R;
 import uk.co.pped.specialfitness.activities.settings.SettingsActivity;
+import uk.co.pped.specialfitness.utility.ApplicationHelper;
 
 
 public class MainActivity extends AbstractBaseActivity
@@ -40,16 +41,17 @@ public class MainActivity extends AbstractBaseActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        MobileAds.initialize(this, getString(R.string.app_id));
-        String value = Conf.APP_ID();
-        bannerAd = (AdView) findViewById(R.id.ads_banner);
-        AdRequest request = new AdRequest.Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .build();
-        bannerAd.loadAd(request);
+        initializeAds();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    private void initializeAds() {
+        MobileAds.initialize(this, Conf.APP_ID());
+        bannerAd = (AdView) findViewById(R.id.ads_banner);
+        AdRequest request = ApplicationHelper.getAdRequest();
+        bannerAd.loadAd(request);
     }
 
     @Override
