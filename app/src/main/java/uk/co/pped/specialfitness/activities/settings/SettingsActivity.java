@@ -7,6 +7,8 @@ import android.os.Build;
 
 import android.preference.PreferenceActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
+import android.view.View;
 
 
 import org.apache.commons.lang3.StringUtils;
@@ -61,12 +63,28 @@ public class SettingsActivity extends AppCompatPreferenceActivity implements Abs
     public void onFragmentInteraction(Uri uri) {
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 
     protected void setSupportedActionBar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setFocusableInTouchMode(true);
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
 }
