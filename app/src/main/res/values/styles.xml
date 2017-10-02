@@ -40,6 +40,10 @@
         <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:textSize">18sp</item>
     </style>
+    <style name="SettingsSuperHeaderTheme" parent="SettingsBasicTheme">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">20sp</item>
+    </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 

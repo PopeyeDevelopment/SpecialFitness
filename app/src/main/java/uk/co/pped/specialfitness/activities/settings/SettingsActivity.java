@@ -9,10 +9,12 @@ import android.preference.PreferenceActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ListAdapter;
 
 
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import uk.co.pped.specialfitness.R;
@@ -25,8 +27,8 @@ import uk.co.pped.specialfitness.fragments.settings.SettingsUnitsFragment;
  */
 public class SettingsActivity extends AppCompatPreferenceActivity implements AbstractBaseSettingsFragment.OnFragmentInteractionListener {
 
-    public SettingsActivity() {}
 
+    public SettingsActivity() {}
 
     @Override
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)

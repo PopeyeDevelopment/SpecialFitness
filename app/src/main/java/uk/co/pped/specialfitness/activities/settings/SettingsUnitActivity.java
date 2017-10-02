@@ -26,7 +26,6 @@ public class SettingsUnitActivity extends AbstractBaseActivity implements Abstra
         setSupportedActionBar();
     }
 
-
     @Override
     public void onFragmentInteraction(Uri uri) {
     }

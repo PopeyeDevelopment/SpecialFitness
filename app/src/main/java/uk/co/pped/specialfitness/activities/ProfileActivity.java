@@ -41,8 +41,6 @@ public class ProfileActivity extends AbstractBaseActivity implements OnFragmentI
         }
     }
 
-
-
     @Override
     public void onFragmentInteraction(Uri uri) {
     }

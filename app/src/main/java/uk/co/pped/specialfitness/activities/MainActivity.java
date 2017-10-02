@@ -86,9 +86,7 @@ public class MainActivity extends AbstractBaseActivity
             return true;
         }
 
-        if (intent != null) {
-            startActivity(intent);
-        }
+        startActivity(intent);
 
         return result;
     }

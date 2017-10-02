@@ -37,5 +37,7 @@
     <string name="height_unit_title">Height</string>
     <string name="distance_unit_title">Distance</string>
     <string name="liquid_unit_title">Liquid</string>
+    <string name="units_header">Units</string>
+    <string name="section_1_header_underlined"><u>Section 1</u></string>
 
 </resources>

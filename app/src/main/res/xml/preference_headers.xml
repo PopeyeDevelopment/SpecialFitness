@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <header android:id="@+id/header_section_1"
+        android:title="@string/section_1_header_underlined"
+        android:layout="@layout/settings_super_header_layout" />
+
+
     <header
-        android:title="Units"
-        android:summary="Set units"
+        android:title="@string/units_header"
+        android:summary="Change Units for Weight, Height, Distance etc."
         android:layout="@layout/preferences_basic_layout"
         android:id="@+id/units">
     </header>
+
 </preference-headers>
