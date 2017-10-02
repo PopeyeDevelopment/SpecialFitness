@@ -31,7 +31,9 @@
                 <TableRow
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp">
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -52,7 +54,7 @@
                         android:background="@android:color/transparent"
                         android:ems="9"
                         android:gravity="end"
-                        android:imeOptions="actionDone"
+                        android:imeOptions="actionNone"
                         android:inputType="text"
                         android:maxLength="25"
                         android:maxLines="1"
@@ -80,7 +82,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="25dp"
                         android:layout_gravity="center|end"
-                        android:layout_margin="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
                         android:ems="9"
                         android:gravity="center|end"
                         android:popupTheme="@style/DropDownViewTheme" />
@@ -104,7 +108,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="center|end"
-                        android:layout_margin="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
                         android:background="@android:color/transparent"
                         android:ems="9"
                         android:focusable="false"
