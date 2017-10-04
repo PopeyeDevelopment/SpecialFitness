@@ -1,16 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <header android:id="@+id/header_section_1"
-        android:title="@string/section_1_header_underlined"
-        android:layout="@layout/settings_super_header_layout" />
+    <header android:id="@+id/profile_section_header"
+        android:title="@string/profile_section_header" >
+        <extra
+            android:name="type"
+            android:value="header" />
+    </header>
 
+    <header android:id="@+id/units_locale_section_header"
+        android:title="@string/units_locale_section_header" >
+        <extra
+            android:name="type"
+            android:value="header" />
+    </header>
 
     <header
         android:title="@string/units_header"
         android:summary="Change Units for Weight, Height, Distance etc."
-        android:layout="@layout/preferences_basic_layout"
-        android:id="@+id/units">
+        android:id="@+id/units" >
+        <extra
+            android:name="type"
+            android:value="intent"/>
+    </header>
+    <header
+        android:id="@+id/first_weekday"
+        android:title="First Weekday"
+        android:summary="Change the day that a weekday will start on.">
+        <extra
+            android:name="type"
+            android:value="intent"/>
+
     </header>
 
 </preference-headers>

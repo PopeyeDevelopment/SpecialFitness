@@ -1,32 +1,38 @@
 package uk.co.pped.specialfitness.activities.settings;
 
+import static uk.co.pped.specialfitness.activities.settings.SettingsFragmentHandler.SettingsFragmentTypes;
+
 import android.annotation.TargetApi;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 
-import android.preference.PreferenceActivity;
+import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ListAdapter;
+import android.widget.TextView;
 
 
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import uk.co.pped.specialfitness.R;
+import uk.co.pped.specialfitness.components.widgets.HeaderAdapter;
 import uk.co.pped.specialfitness.fragments.settings.AbstractBaseSettingsFragment;
 import uk.co.pped.specialfitness.activities.settings.support.AppCompatPreferenceActivity;
 import uk.co.pped.specialfitness.fragments.settings.SettingsUnitsFragment;
+import uk.co.pped.specialfitness.utility.ApplicationHelper;
 
 /**
  * Created by matthewi on 08/09/2017.
  */
 public class SettingsActivity extends AppCompatPreferenceActivity implements AbstractBaseSettingsFragment.OnFragmentInteractionListener {
 
+    private static final String BUILD_VERSION_PREFIX_STR = "Build Version: ";
+
+    private HeaderAdapter headerAdapter;
 
     public SettingsActivity() {}
 
@@ -36,15 +42,34 @@ public class SettingsActivity extends AppCompatPreferenceActivity implements Abs
         setContentView(R.layout.settings_activity);
         setSupportedActionBar();
         loadHeadersFromResource(R.xml.preference_headers, target);
+
+        headerAdapter = new HeaderAdapter(this, target);
+        setListAdapter(headerAdapter);
+    }
+
+    @Override
+    public void setListAdapter(ListAdapter adapter) {
+        super.setListAdapter(headerAdapter);
+    }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        TextView buildVersionTextView = (TextView) findViewById(R.id.buildVersion);
+        if (buildVersionTextView != null) {
+            String buildVersionStr = BUILD_VERSION_PREFIX_STR + ApplicationHelper.getBuildVersion();
+            buildVersionTextView.setText(buildVersionStr);
+        }
     }
 
     @Override
     public void onHeaderClick(Header header, int position) {
         super.onHeaderClick(header, position);
         long headerId = header.id;
-        Intent intent = null;
+        Intent intent = new Intent(this, SettingsFragmentHandler.class);;
+
         if (headerId == R.id.units) {
-            intent = new Intent(this, SettingsUnitActivity.class);
+            intent.putExtra(SettingsFragmentTypes.FRAGMENT_TYPE_KEY, SettingsFragmentTypes.FRAGMENT_TYPE_UNITS);
         }
 
         if (intent != null) {

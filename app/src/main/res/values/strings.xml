@@ -38,6 +38,8 @@
     <string name="distance_unit_title">Distance</string>
     <string name="liquid_unit_title">Liquid</string>
     <string name="units_header">Units</string>
-    <string name="section_1_header_underlined"><u>Section 1</u></string>
+    <string name="units_locale_section_header">Units and Locale</string>
+    <string name="profile_section_header">Profile</string>
+
 
 </resources>
