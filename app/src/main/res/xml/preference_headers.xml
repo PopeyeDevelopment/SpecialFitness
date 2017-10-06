@@ -24,9 +24,9 @@
             android:value="intent"/>
     </header>
     <header
-        android:id="@+id/first_weekday"
-        android:title="First Weekday"
-        android:summary="Change the day that a weekday will start on.">
+        android:id="@+id/week_preferences"
+        android:title="@string/week_preferences"
+        android:summary="Change your week preferences.">
         <extra
             android:name="type"
             android:value="intent"/>

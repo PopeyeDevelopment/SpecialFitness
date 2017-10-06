@@ -33,6 +33,10 @@ public final class ApplicationHelper extends Application {
         return ApplicationHelper.context;
     }
 
+    public static String getStringFromResId(int resId) {
+        return getContext().getString(resId);
+    }
+
     /**
      * Helper method for gettting a valid AdRequest.
      *

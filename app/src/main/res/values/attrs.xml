@@ -25,5 +25,4 @@
         <attr name="gradientStartColor" format="color"/>
         <attr name="gradientEndColor" format="color"/>
     </declare-styleable>
-
 </resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="Your Week"
+        android:layout="@layout/settings_header_layout">
+
+        <SwitchPreference
+            android:title="Use Default Settings"
+            android:key="@string/week_defaults"
+            android:disableDependentsState="true"
+            android:defaultValue="true" />
+
+        <ListPreference
+            android:key="@string/week_day_start"
+            android:dependency="@string/week_defaults"
+            android:entries="@array/week_day_start_entries"
+            android:entryValues="@array/week_day_start_values"
+            android:title="@string/weekday_start_title"
+            android:summary="%s"
+            android:layout="@layout/preferences_basic_layout"
+            android:defaultValue="@string/weekday_start_default"/>
+        <MultiSelectListPreference
+            android:key="@string/available_workout_days"
+            android:dependency="@string/week_defaults"
+            android:entries="@array/week_day_start_entries"
+            android:entryValues="@array/week_day_start_values"
+            android:title="When can you exercise?"
+            android:summary="%s"
+            android:layout="@layout/preferences_basic_layout"
+            android:defaultValue="@array/week_day_start_values"
+            />
+
+
+    </PreferenceCategory>
+</PreferenceScreen>

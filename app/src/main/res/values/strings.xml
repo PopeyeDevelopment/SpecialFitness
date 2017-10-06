@@ -41,5 +41,15 @@
     <string name="units_locale_section_header">Units and Locale</string>
     <string name="profile_section_header">Profile</string>
 
+    <string name="week_preferences">Your Week</string>
+    <string name="weekday_start_title">Week Start Day</string>
+
+    <!-- Preference Keys -->
+    <string name="week_defaults">uk.co.pped.specialfitness.key.week_defaults</string>
+    <string name="week_day_start">uk.co.pped.specialfitness.key.week_day_start</string>
+    <string name="available_workout_days">uk.co.pped.specialfitness.key.available_workout_days</string>
+
+    <!-- Preferences Defaults -->
+    <string name="weekday_start_default">Monday</string>
 
 </resources>

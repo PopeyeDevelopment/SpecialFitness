@@ -32,9 +32,9 @@ public class HeaderAdapter extends ArrayAdapter<Header> {
     static final int HEARDER_TYPE_CATERGORY = 0;
     static final int HEADER_TYPE_OTHER = -1;
 
-    static final String HEADER_TYPE_KEY = "type";
-    static final String HEADER_TYPE_HEADER = "header";
-    static final String HEADER_TYPE_INTENT = "intent";
+    public static final String HEADER_TYPE_KEY = "type";
+    public static final String HEADER_TYPE_HEADER = "header";
+    public static final String HEADER_TYPE_INTENT = "intent";
 
     private LayoutInflater inflater;
     private boolean removeIconIfEmpty;

@@ -47,7 +47,7 @@
         </activity>
         <activity
             android:name=".activities.settings.SettingsFragmentHandler"
-            android:label="Units"
+            android:label="Settings"
             android:parentActivityName=".activities.settings.SettingsActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data

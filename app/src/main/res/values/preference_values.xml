@@ -41,4 +41,24 @@
         <item>ml</item>
         <item>l</item>
     </string-array>
+
+    <string-array name="week_day_start_entries">
+        <item>Sunday</item>
+        <item>@string/weekday_start_default</item> <!-- Pull in the default from String values so we know they match -->
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+    </string-array>
+    <string-array name="week_day_start_values">
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+    </string-array>
+
 </resources>

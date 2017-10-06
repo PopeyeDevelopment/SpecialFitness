@@ -1,6 +1,7 @@
 package uk.co.pped.specialfitness.activities.settings;
 
-import static uk.co.pped.specialfitness.activities.settings.SettingsFragmentHandler.SettingsFragmentTypes;
+import uk.co.pped.specialfitness.fragments.settings.SettingsFragment.SettingsFragmentTypes;
+import uk.co.pped.specialfitness.components.widgets.HeaderAdapter;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
@@ -22,7 +23,7 @@ import uk.co.pped.specialfitness.R;
 import uk.co.pped.specialfitness.components.widgets.HeaderAdapter;
 import uk.co.pped.specialfitness.fragments.settings.AbstractBaseSettingsFragment;
 import uk.co.pped.specialfitness.activities.settings.support.AppCompatPreferenceActivity;
-import uk.co.pped.specialfitness.fragments.settings.SettingsUnitsFragment;
+import uk.co.pped.specialfitness.fragments.settings.SettingsFragment;
 import uk.co.pped.specialfitness.utility.ApplicationHelper;
 
 /**
@@ -65,22 +66,33 @@ public class SettingsActivity extends AppCompatPreferenceActivity implements Abs
     @Override
     public void onHeaderClick(Header header, int position) {
         super.onHeaderClick(header, position);
-        long headerId = header.id;
-        Intent intent = new Intent(this, SettingsFragmentHandler.class);;
+        if (header != null) {
+            final Bundle extras = header.fragmentArguments;
 
-        if (headerId == R.id.units) {
-            intent.putExtra(SettingsFragmentTypes.FRAGMENT_TYPE_KEY, SettingsFragmentTypes.FRAGMENT_TYPE_UNITS);
-        }
+            if (extras.containsKey(HeaderAdapter.HEADER_TYPE_KEY)
+                    && extras.get(HeaderAdapter.HEADER_TYPE_KEY).equals(HeaderAdapter.HEADER_TYPE_INTENT)) {
 
-        if (intent != null) {
-            startActivity(intent);
+                long headerId = header.id;
+                Intent intent = new Intent(this, SettingsFragmentHandler.class);
+
+
+                if (headerId == R.id.units) {
+                    intent.putExtra(SettingsFragmentTypes.FRAGMENT_TYPE_KEY, SettingsFragmentTypes.FRAGMENT_TYPE_UNITS_PREFERENCES);
+                } else if (headerId == R.id.week_preferences) {
+                    intent.putExtra(SettingsFragmentTypes.FRAGMENT_TYPE_KEY, SettingsFragmentTypes.FRAGMENT_TYPE_WEEK_PREFERENCES);
+                }
+
+                if (intent != null) {
+                    startActivity(intent);
+                }
+            }
         }
     }
 
     @Override
     public boolean isValidFragment(String fragmentName) {
 
-        if (StringUtils.equals(SettingsUnitsFragment.class.getName(), fragmentName)) {
+        if (StringUtils.equals(SettingsFragment.class.getName(), fragmentName)) {
             return true;
         }
         return false;

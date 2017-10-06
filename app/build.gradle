@@ -56,6 +56,9 @@ dependencies {
     implementation "com.android.support:recyclerview-v7:$supportedLib_version"
     implementation "com.android.support:mediarouter-v7:$supportedLib_version"
     implementation "com.android.support:preference-v7:$supportedLib_version"
+
+    implementation "com.android.support:preference-v14:$supportedLib_version"
+
     // Google Play Services
     implementation 'com.google.android.gms:play-services:11.2.2'
     implementation 'com.google.android.gms:play-services-ads:11.2.0'
