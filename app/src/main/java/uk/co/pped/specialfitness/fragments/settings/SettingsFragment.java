@@ -20,12 +20,15 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.Switch;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import uk.co.pped.specialfitness.R;
 import uk.co.pped.specialfitness.activities.AbstractBaseActivity;
 import uk.co.pped.specialfitness.activities.settings.SettingsFragmentHandler;
+import uk.co.pped.specialfitness.components.preferences.PPEDDefaultSwitchPreference;
 import uk.co.pped.specialfitness.utility.ApplicationHelper;
 import uk.co.pped.specialfitness.utils.KeyUtils;
 
@@ -128,37 +131,41 @@ public class SettingsFragment extends AbstractBaseSettingsFragment {
 
 
     private void setupWeeklyPreferenceConfig() {
-        final SwitchPreference defaultSwitch = (SwitchPreference) findPreference(KeyUtils.WEEK_DEFAULTS_KEY);
+        final PPEDDefaultSwitchPreference defaultSwitch = (PPEDDefaultSwitchPreference) findPreference(KeyUtils.WEEK_DEFAULTS_KEY);
         final ListPreference weekdayStarts = (ListPreference) findPreference(KeyUtils.WEEKDAY_STARTS_KEY);
         final MultiSelectListPreference daysAbleToWorkoutList = (MultiSelectListPreference) findPreference(KeyUtils.AVAILABLE_WORKOUT_DAYS_KEY);
+        List<Preference> preferencesContainer = new ArrayList<Preference>();
+        preferencesContainer.add(weekdayStarts);
+        preferencesContainer.add(daysAbleToWorkoutList);
+        defaultSwitch.setPreferencesContainer(preferencesContainer);
 
-        defaultSwitch.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-            @Override
-            public boolean onPreferenceChange(Preference preference, Object o) {
-                if (!((SwitchPreference)preference).isChecked()) {
-//                    //sharedPreferences.edit().remove(KeyUtils.WEEKDAY_STARTS_KEY).commit();
-//                    PreferenceManager.setDefaultValues(baseActivity.getBaseContext(), R.xml.week_preferences,true);
-                }
-                return true;
-            }
-        });
-
-        weekdayStarts.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-            @Override
-            public boolean onPreferenceChange(Preference preference, Object newValue) {
-                weekdayStarts.setSummary((String) newValue);
-                return true;
-            }
-        });
-
-        daysAbleToWorkoutList.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-
-            @Override
-            public boolean onPreferenceChange(Preference preference, Object newValue) {
-                daysAbleToWorkoutList.setSummary(((Set<String>) newValue).toString());
-                return true;
-            }
-        });
+//        defaultSwitch.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+//            @Override
+//            public boolean onPreferenceChange(Preference preference, Object o) {
+//                if (!((SwitchPreference)preference).isChecked()) {
+////                    //sharedPreferences.edit().remove(KeyUtils.WEEKDAY_STARTS_KEY).commit();
+////                    PreferenceManager.setDefaultValues(baseActivity.getBaseContext(), R.xml.week_preferences,true);
+//                }
+//                return true;
+//            }
+//        });
+//
+//        weekdayStarts.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+//            @Override
+//            public boolean onPreferenceChange(Preference preference, Object newValue) {
+//                weekdayStarts.setSummary((String) newValue);
+//                return true;
+//            }
+//        });
+//
+//        daysAbleToWorkoutList.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+//
+//            @Override
+//            public boolean onPreferenceChange(Preference preference, Object newValue) {
+//                daysAbleToWorkoutList.setSummary(((Set<String>) newValue).toString());
+//                return true;
+//            }
+//        });
 
     }
 

@@ -4,7 +4,9 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#3F51B5</color>
 
-    <color name="textColorSettings">#737373</color>#737373
+    <color name="textColorSettings">#737373</color>
     <color name="summaryTextColor">#737373</color>
     <color name="titleTextColor">#000000</color>
+    <color name="titleDisabledTextColor">#737373</color>
+    <color name="summaryDisabledTextColor">#737373</color>
 </resources>

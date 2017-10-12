@@ -25,4 +25,10 @@
         <attr name="gradientStartColor" format="color"/>
         <attr name="gradientEndColor" format="color"/>
     </declare-styleable>
+
+    <declare-styleable name="PPEDListPreferences">
+        <attr name="titleDisabledTextColour" format="color" />
+        <attr name="summaryDisabledTextColour" format="color" />
+        <attr name="overridingDefaultValue" format="string" />
+    </declare-styleable>
 </resources>

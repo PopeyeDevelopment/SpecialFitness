@@ -1,24 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:pped="http://schemas.android.com/apk/res-auto" >
+    <!-- defaultValue: Initial Startup default Value used when application loads for the first time. -->
+    <!-- overridingDefaultValue: This is the default Value that we revert to when default switch is used. -->
     <PreferenceCategory
         android:title="Your Week"
         android:layout="@layout/settings_header_layout">
 
-        <SwitchPreference
+        <uk.co.pped.specialfitness.components.preferences.PPEDDefaultSwitchPreference
             android:title="Use Default Settings"
             android:key="@string/week_defaults"
             android:disableDependentsState="true"
             android:defaultValue="true" />
 
-        <ListPreference
+        <uk.co.pped.specialfitness.components.preferences.PPEDListPreferences
+            pped:titleDisabledTextColour="@color/titleDisabledTextColor"
             android:key="@string/week_day_start"
             android:dependency="@string/week_defaults"
             android:entries="@array/week_day_start_entries"
             android:entryValues="@array/week_day_start_values"
             android:title="@string/weekday_start_title"
             android:summary="%s"
-            android:layout="@layout/preferences_basic_layout"
-            android:defaultValue="@string/weekday_start_default"/>
+            android:defaultValue="@string/weekday_start_default"
+            pped:overridingDefaultValue="@string/weekday_start_default"
+            android:layout="@layout/preferences_basic_layout" />
         <MultiSelectListPreference
             android:key="@string/available_workout_days"
             android:dependency="@string/week_defaults"
