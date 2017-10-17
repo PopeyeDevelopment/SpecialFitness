@@ -1,40 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:pped="http://schemas.android.com/apk/res-auto" >
 
 
     <PreferenceCategory
         android:title="Units"
         android:layout="@layout/settings_header_layout">
 
-        <ListPreference
-            android:key="weight_units"
+        <uk.co.pped.specialfitness.components.preferences.SettingsDefaultSwitchPreference
+            android:title="Use Default Settings"
+            android:key="@string/units_defaults"
+            android:disableDependentsState="true"
+            android:defaultValue="true" />
+
+        <uk.co.pped.specialfitness.components.preferences.SettingsListPreferences
+            android:key="@string/weight_units_key"
             android:entries="@array/weight_unit_entries"
             android:entryValues="@array/weight_unit_values"
+            android:dependency="@string/units_defaults"
             android:title="@string/weight_unit_title"
             android:summary="%s"
-            android:layout="@layout/preferences_basic_layout" />
-        <ListPreference
-            android:key="height_units"
+            android:defaultValue="@string/weight_default"
+            android:layout="@layout/preferences_basic_layout"
+            pped:overridingDefaultValue="@string/weight_default"
+            pped:titleDisabledTextColour="@color/titleDisabledTextColor" />
+        <uk.co.pped.specialfitness.components.preferences.SettingsListPreferences
+            android:key="@string/height_units_key"
             android:entries="@array/height_unit_entries"
             android:entryValues="@array/height_unit_values"
+            android:dependency="@string/units_defaults"
             android:title="@string/height_unit_title"
             android:summary="%s"
-            android:layout="@layout/preferences_basic_layout" />
-        <ListPreference
-            android:key="distance_units"
+            android:defaultValue="@string/height_default"
+            android:layout="@layout/preferences_basic_layout"
+            pped:overridingDefaultValue="@string/height_default"
+            pped:titleDisabledTextColour="@color/titleDisabledTextColor" />
+        <uk.co.pped.specialfitness.components.preferences.SettingsListPreferences
+            android:key="@string/distance_units_key"
             android:entries="@array/distance_unit_entries"
             android:entryValues="@array/distance_unit_values"
+            android:dependency="@string/units_defaults"
             android:title="@string/distance_unit_title"
             android:summary="%s"
-            android:layout="@layout/preferences_basic_layout" />
-        <ListPreference
-            android:key="liquid_units"
+            android:defaultValue="@string/distance_default"
+            android:layout="@layout/preferences_basic_layout"
+            pped:overridingDefaultValue="@string/distance_default"
+            pped:titleDisabledTextColour="@color/titleDisabledTextColor" />
+        <uk.co.pped.specialfitness.components.preferences.SettingsListPreferences
+            android:key="@string/fluid_intake_units_key"
             android:entries="@array/liquid_unit_entries"
             android:entryValues="@array/liquid_unit_values"
+            android:dependency="@string/units_defaults"
             android:title="@string/liquid_unit_title"
             android:summary="%s"
-            android:layout="@layout/preferences_basic_layout" />
+            android:defaultValue="@string/fluid_intake_default"
+            android:layout="@layout/preferences_basic_layout"
+            pped:overridingDefaultValue="@string/fluid_intake_default"
+            pped:titleDisabledTextColour="@color/titleDisabledTextColor" />
 
     </PreferenceCategory>
 </PreferenceScreen>

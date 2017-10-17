@@ -7,39 +7,39 @@
         <item>Pounds (lbs)</item>
     </string-array>
     <string-array name="weight_unit_values">
-        <item>kg</item>
+        <item>@string/weight_default</item>
         <item>Stone</item>
         <item>lbs</item>
     </string-array>
 
     <!-- Height Units Values and Entries -->
     <string-array name="height_unit_entries">
-        <item>Feet/Inches (ft/in</item>
+        <item>Foot, Inches (ft, inch)</item>
         <item>Centimeters (cm)</item>
     </string-array>
     <string-array name="height_unit_values">
-        <item>ft/in</item>
-        <item>Stone</item>
+        <item>ft-inch</item>
+        <item>@string/height_default</item>
     </string-array>
 
     <!-- Distance Units Values and Entries -->
     <string-array name="distance_unit_entries">
-        <item>Miles</item>
+        <item>Miles (mi)</item>
         <item>Kilometres (km)</item>
     </string-array>
     <string-array name="distance_unit_values">
-        <item>miles</item>
-        <item>km</item>
+        <item>mi</item>
+        <item>@string/distance_default</item>
     </string-array>
 
     <!-- Liquid Units Values and Entries -->
     <string-array name="liquid_unit_entries">
         <item>Milliliters (ml)</item>
-        <item>Litres (L)</item>
+        <item>Fluid Oz (fl oz)</item>
     </string-array>
     <string-array name="liquid_unit_values">
-        <item>ml</item>
-        <item>l</item>
+        <item>@string/fluid_intake_default</item>
+        <item>fl-oz</item>
     </string-array>
 
     <string-array name="week_day_start_entries">

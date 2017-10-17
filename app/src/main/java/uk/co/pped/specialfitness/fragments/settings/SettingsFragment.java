@@ -97,6 +97,7 @@ public class SettingsFragment extends AbstractBaseSettingsFragment {
                 // We should never make it here as SettingsFragmentHandler should catch this but just in case.
                 throw new IllegalStateException("getPreferenceIdToLoad: Attempted to load an unknown Settings Fragment.");
             case SettingsFragmentTypes.FRAGMENT_TYPE_UNITS_PREFERENCES:
+                setupUnitPreferenceConfig();
                 break;
             case SettingsFragmentTypes.FRAGMENT_TYPE_WEEK_PREFERENCES:
                 setupWeeklyPreferenceConfig();
@@ -130,6 +131,21 @@ public class SettingsFragment extends AbstractBaseSettingsFragment {
 
         preferencesContainer.add(weekdayStarts);
         preferencesContainer.add(daysAbleToWorkoutList);
+        defaultSwitch.setPreferencesContainer(preferencesContainer);
+    }
+
+    private void setupUnitPreferenceConfig() {
+        final SettingsDefaultSwitchPreference defaultSwitch = (SettingsDefaultSwitchPreference) findPreference(KeyUtils.UNITS_DEFAULTS_KEY);
+        final SettingsListPreferences weightList = (SettingsListPreferences) findPreference(KeyUtils.UNITS_WEIGHT_KEY);
+        final SettingsListPreferences heightList = (SettingsListPreferences) findPreference(KeyUtils.UNITS_HEIGHT_KEY);
+        final SettingsListPreferences distanceList = (SettingsListPreferences) findPreference(KeyUtils.UNITS_DISTANCE_KEY);
+        final SettingsListPreferences fluidInstakeList = (SettingsListPreferences) findPreference(KeyUtils.UNITS_FLUID_INTAKE_KEY);
+
+        List<Preference> preferencesContainer = new ArrayList<Preference>();
+        preferencesContainer.add(weightList);
+        preferencesContainer.add(heightList);
+        preferencesContainer.add(distanceList);
+        preferencesContainer.add(fluidInstakeList);
         defaultSwitch.setPreferencesContainer(preferencesContainer);
     }
 }

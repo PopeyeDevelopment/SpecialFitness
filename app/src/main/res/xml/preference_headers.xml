@@ -1,20 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- Profile Settings Options -->
     <header android:id="@+id/profile_section_header"
-        android:title="@string/profile_section_header" >
+        android:title="@string/profile_section_header">
         <extra
             android:name="type"
             android:value="header" />
     </header>
+    <header
+        android:id="@+id/your_profile"
+        android:title="@string/your_profile_header"
+        android:summary="Make changes to your User Profile.">
+        <extra
+            android:name="type"
+            android:value="intent" />
+    </header>
+    <header
+        android:id="@+id/your_week_preferences"
+        android:title="@string/week_preferences"
+        android:summary="Change your week preferences.">
+        <extra
+            android:name="type"
+            android:value="intent"/>
 
-    <header android:id="@+id/units_locale_section_header"
-        android:title="@string/units_locale_section_header" >
+    </header>
+
+    <!-- General Settings Options -->
+    <header
+        android:title="@string/general_section_header"
+        android:id="@+id/general_section_header">
         <extra
             android:name="type"
             android:value="header" />
     </header>
-
     <header
         android:title="@string/units_header"
         android:summary="Change Units for Weight, Height, Distance etc."
@@ -22,15 +41,6 @@
         <extra
             android:name="type"
             android:value="intent"/>
-    </header>
-    <header
-        android:id="@+id/week_preferences"
-        android:title="@string/week_preferences"
-        android:summary="Change your week preferences.">
-        <extra
-            android:name="type"
-            android:value="intent"/>
-
     </header>
 
 </preference-headers>

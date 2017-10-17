@@ -1,5 +1,6 @@
 package uk.co.pped.specialfitness.activities.settings;
 
+import uk.co.pped.specialfitness.activities.ProfileActivity;
 import uk.co.pped.specialfitness.fragments.settings.SettingsFragment.SettingsFragmentTypes;
 import uk.co.pped.specialfitness.components.widgets.HeaderAdapter;
 
@@ -78,8 +79,11 @@ public class SettingsActivity extends AppCompatPreferenceActivity implements Abs
 
                 if (headerId == R.id.units) {
                     intent.putExtra(SettingsFragmentTypes.FRAGMENT_TYPE_KEY, SettingsFragmentTypes.FRAGMENT_TYPE_UNITS_PREFERENCES);
-                } else if (headerId == R.id.week_preferences) {
+                } else if (headerId == R.id.your_week_preferences) {
                     intent.putExtra(SettingsFragmentTypes.FRAGMENT_TYPE_KEY, SettingsFragmentTypes.FRAGMENT_TYPE_WEEK_PREFERENCES);
+                } else if (headerId == R.id.your_profile) {
+                    // For "Your Profile" we'll override the intent and send the user to their profile.
+                    intent = new Intent(this, ProfileActivity.class);
                 }
 
                 if (intent != null) {

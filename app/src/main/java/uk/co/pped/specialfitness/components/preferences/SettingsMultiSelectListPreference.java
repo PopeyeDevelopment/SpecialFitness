@@ -98,7 +98,7 @@ public class SettingsMultiSelectListPreference extends MultiSelectListPreference
      * is a custom attribute declared in attr.xml
      */
     private void setListType() {
-        int enumId = styleables.getInt(R.styleable.SettingsMultiSelectListPreference_EnumlistType, SettingsFragmentHandler.defVal);
+        int enumId = styleables.getInt(R.styleable.SettingsMultiSelectListPreference_listType, SettingsFragmentHandler.defVal);
         this.listType = SettingsMultiSelectListTypes.getListTypeFromInt(enumId);
     }
 

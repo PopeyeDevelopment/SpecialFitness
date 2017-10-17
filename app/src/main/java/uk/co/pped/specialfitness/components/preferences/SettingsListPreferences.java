@@ -91,7 +91,9 @@ public class SettingsListPreferences extends ListPreference implements Preferenc
     public void resetToDefaults() {
         if (StringUtils.isNotEmpty(overridingDefaultValue)) {
             int defaultValIndex = this.findIndexOfValue(overridingDefaultValue);
-            this.setValueIndex(defaultValIndex);
+            if (defaultValIndex != -1) {
+                this.setValueIndex(defaultValIndex);
+            }
         }
 
         // We need to notify as we've changed the data.

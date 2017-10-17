@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.apache.commons.lang3.StringUtils;
@@ -62,8 +63,20 @@ public class HeaderAdapter extends ArrayAdapter<Header> {
                     convertView = inflater.inflate(R.layout.preferences_basic_layout, parent, false);
                     ((TextView) convertView.findViewById(android.R.id.title)).setText(header.getTitle(getContext()
                             .getResources()));
-                    ((TextView) convertView.findViewById(android.R.id.summary)).setText(header
-                            .getSummary(getContext().getResources()));
+                    String summary = (String) header.getSummary(getContext().getResources());
+                    if (!StringUtils.isEmpty(summary)) {
+                        ((TextView) convertView.findViewById(android.R.id.summary)).setText(header
+                                .getSummary(getContext().getResources()));
+                    } else {
+                        ((TextView) convertView.findViewById(android.R.id.summary)).setVisibility(View.GONE);
+                        LinearLayout.LayoutParams llp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                        llp.setMargins(
+                                DpToPxConvertion(10),
+                                DpToPxConvertion(10),
+                                DpToPxConvertion(10),
+                                DpToPxConvertion(10));
+                        ((TextView) convertView.findViewById(android.R.id.title)).setLayoutParams(llp);
+                    }
                     break;
             }
         }
@@ -95,5 +108,10 @@ public class HeaderAdapter extends ArrayAdapter<Header> {
         }
 
         return false;
+    }
+
+    private int DpToPxConvertion(int dpValue)
+    {
+        return (int)((dpValue * getContext().getResources().getDisplayMetrics().density) + 0.5);
     }
 }

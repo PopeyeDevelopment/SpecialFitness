@@ -36,10 +36,12 @@
     <string name="weight_unit_title">Weight</string>
     <string name="height_unit_title">Height</string>
     <string name="distance_unit_title">Distance</string>
-    <string name="liquid_unit_title">Liquid</string>
+    <string name="liquid_unit_title">Fluid Intake</string>
     <string name="units_header">Units</string>
-    <string name="units_locale_section_header">Units and Locale</string>
-    <string name="profile_section_header">Profile</string>
+    <string name="units_section_header">Units</string>
+    <string name="profile_section_header">User</string>
+    <string name="general_section_header">General</string>
+    <string name="your_profile_header">Profile</string>
 
     <string name="week_preferences">Your Week</string>
     <string name="weekday_start_title">Week Start Day</string>
@@ -49,7 +51,19 @@
     <string name="week_day_start">uk.co.pped.specialfitness.key.week_day_start</string>
     <string name="available_workout_days">uk.co.pped.specialfitness.key.available_workout_days</string>
 
+    <string name="units_defaults">uk.co.pped.specialfitness.key.units_defaults</string>
+    <string name="weight_units_key">uk.co.pped.specialfitness.key.weight_units</string>
+    <string name="height_units_key">uk.co.pped.specialfitness.key.height_units</string>
+    <string name="distance_units_key">uk.co.pped.specialfitness.key.distance_units</string>
+    <string name="fluid_intake_units_key">uk.co.pped.specialfitness.key.fluid_intake_units</string>
+
+
+
     <!-- Preferences Defaults -->
     <string name="weekday_start_default">Monday</string>
+    <string name="height_default">cm</string>
+    <string name="weight_default">kg</string>
+    <string name="distance_default">km</string>
+    <string name="fluid_intake_default">ml</string>
 
 </resources>
