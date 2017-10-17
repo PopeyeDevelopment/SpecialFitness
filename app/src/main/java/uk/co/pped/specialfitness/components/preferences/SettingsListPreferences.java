@@ -23,8 +23,6 @@ import uk.co.pped.specialfitness.activities.settings.SettingsFragmentHandler;
 
 public class SettingsListPreferences extends ListPreference implements Preference.OnPreferenceChangeListener {
 
-    private static final int defVal = -1;
-
     private final TypedArray styleables;
     private int disabledTitleTextColor;
     private String overridingDefaultValue;
@@ -66,8 +64,8 @@ public class SettingsListPreferences extends ListPreference implements Preferenc
      */
     private void setOverridingDefaultValue(String overridingDefaultValue1) {
         if (StringUtils.isEmpty(overridingDefaultValue1)) {
-            int resourceId = styleables.getResourceId(R.styleable.SettingsListPreferences_overridingDefaultValue, defVal);
-            if (resourceId != defVal) {
+            int resourceId = styleables.getResourceId(R.styleable.SettingsListPreferences_overridingDefaultValue, SettingsFragmentHandler.defVal);
+            if (resourceId != SettingsFragmentHandler.defVal) {
                 overridingDefaultValue1 = getContext().getResources().getString(resourceId);
             }
         }
@@ -79,8 +77,8 @@ public class SettingsListPreferences extends ListPreference implements Preferenc
      * Set the default value for disabledTitleTextColour from the attribute set in the xml.
      */
     private void setDisabledTitleTextColor() {
-        int resourceId = styleables.getResourceId(R.styleable.SettingsListPreferences_titleDisabledTextColour, defVal);
-        if (resourceId != defVal) {
+        int resourceId = styleables.getResourceId(R.styleable.SettingsListPreferences_titleDisabledTextColour, SettingsFragmentHandler.defVal);
+        if (resourceId != SettingsFragmentHandler.defVal) {
             this.disabledTitleTextColor = getContext().getResources().getColor(resourceId);
         }
     }

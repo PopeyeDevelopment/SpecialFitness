@@ -28,8 +28,6 @@ import uk.co.pped.specialfitness.utility.SettingsMultiSelectListTypes;
 
 public class SettingsMultiSelectListPreference extends MultiSelectListPreference implements Preference.OnPreferenceChangeListener {
 
-    private static final int defVal = -1;
-
     private final TypedArray styleables;
     private int disabledTitleTextColor;
     private Set<String> overridingDefaultValues = new HashSet<String>();
@@ -75,8 +73,8 @@ public class SettingsMultiSelectListPreference extends MultiSelectListPreference
      */
     private void setOverridingDefaultValues(String[] overridingDefaultValues1) {
         if (overridingDefaultValues1 == null) {
-            int resourceId = styleables.getResourceId(R.styleable.SettingsMultiSelectListPreference_overridingDefaultValues, defVal);
-            if (resourceId != defVal) {
+            int resourceId = styleables.getResourceId(R.styleable.SettingsMultiSelectListPreference_overridingDefaultValues, SettingsFragmentHandler.defVal);
+            if (resourceId != SettingsFragmentHandler.defVal) {
                 overridingDefaultValues1 = getContext().getResources().getStringArray(resourceId);
             }
         }
@@ -89,14 +87,14 @@ public class SettingsMultiSelectListPreference extends MultiSelectListPreference
      * Set the default value for disabledTitleTextColour from the attribute set in the xml.
      */
     private void setDisabledTitleTextColor() {
-        int resourceId = styleables.getResourceId(R.styleable.SettingsMultiSelectListPreference_titleDisabledTextColour, defVal);
-        if (resourceId != defVal) {
+        int resourceId = styleables.getResourceId(R.styleable.SettingsMultiSelectListPreference_titleDisabledTextColour, SettingsFragmentHandler.defVal);
+        if (resourceId != SettingsFragmentHandler.defVal) {
             this.disabledTitleTextColor = getContext().getResources().getColor(resourceId);
         }
     }
 
     private void setListType() {
-        int enumId = styleables.getInt(R.styleable.SettingsMultiSelectListPreference_EnumlistType, defVal);
+        int enumId = styleables.getInt(R.styleable.SettingsMultiSelectListPreference_EnumlistType, SettingsFragmentHandler.defVal);
         this.listType = SettingsMultiSelectListTypes.getListTypeFromInt(enumId);
     }
 

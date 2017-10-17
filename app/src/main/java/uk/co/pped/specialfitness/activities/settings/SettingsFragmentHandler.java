@@ -19,6 +19,9 @@ import uk.co.pped.specialfitness.fragments.settings.SettingsFragment;
 
 public class SettingsFragmentHandler extends AbstractBaseActivity implements AbstractBaseSettingsFragment.OnFragmentInteractionListener {
 
+    /** Default value to be used. */
+    public static final int defVal = -1;
+
     public static final int[][] STATES = new int[][] {
             new int[] { android.R.attr.state_enabled}, // enabled
             new int[] {-android.R.attr.state_enabled}, // disabled
