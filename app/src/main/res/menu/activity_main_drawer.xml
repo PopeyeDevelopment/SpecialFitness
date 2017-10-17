@@ -9,6 +9,9 @@
                     android:id="@+id/nav_profile"
                     android:icon="@drawable/ic_menu_profile"
                     android:title="@string/your_profile_header" />
+                <item
+                    android:id="@+id/your_goals_and_targets"
+                    android:title="Your Goals" />
             </group>
         </menu>
     </item>
@@ -42,6 +45,19 @@
                     android:id="@+id/nav_water_diary"
                     android:icon="@drawable/ic_nutrition_water_diary"
                     android:title="@string/nav_water_diary" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="General">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/feedback"
+                    android:title="Feedback"/>
+                <item
+                    android:id="@+id/privacy"
+                    android:title="Privacy" />
             </group>
         </menu>
     </item>
