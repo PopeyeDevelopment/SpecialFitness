@@ -275,6 +275,7 @@ public class CurvedImageView extends AppCompatImageView {
     public void setImageBitmap(Bitmap bm) {
         super.setImageBitmap(bm);
         this.bitmap = bm;
+        user.setProfileCover(bm);
     }
 
 }
