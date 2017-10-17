@@ -93,16 +93,24 @@ public class SettingsMultiSelectListPreference extends MultiSelectListPreference
         }
     }
 
+    /**
+     * Set the listType specified in the xml, uses the attribute listType which
+     * is a custom attribute declared in attr.xml
+     */
     private void setListType() {
         int enumId = styleables.getInt(R.styleable.SettingsMultiSelectListPreference_EnumlistType, SettingsFragmentHandler.defVal);
         this.listType = SettingsMultiSelectListTypes.getListTypeFromInt(enumId);
     }
 
+    /**
+     * @return returns a sorted list of values.
+     */
     private List<String> getSortedValues() {
         List<String> tempValuesList = new ArrayList<String>(this.getValues());
         Collections.sort(tempValuesList, listType.getComparator());
         return tempValuesList;
     }
+
     /**
      * Convenience method for resetting options and UI to
      * it's defaulted state. Should only be used when using

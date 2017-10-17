@@ -38,7 +38,7 @@
     <declare-styleable name="SettingsMultiSelectListPreference" >
         <attr name="titleDisabledTextColour"/>
         <attr name="overridingDefaultValues" format="reference" />
-        <attr name="EnumlistType" format="enum">
+        <attr name="listType" format="enum">
             <enum name="WEEKDAYS" value="0" />
         </attr>
     </declare-styleable>

@@ -36,7 +36,7 @@
             android:defaultValue="@array/days_available_defaults"
             pped:overridingDefaultValues="@array/days_available_defaults"
             pped:titleDisabledTextColour="@color/titleDisabledTextColor"
-            pped:EnumlistType="WEEKDAYS"/>
+            pped:listType="WEEKDAYS"/>
 
     </PreferenceCategory>
 </PreferenceScreen>
