@@ -28,12 +28,10 @@
         android:id="@+id/profile_cover"
         android:layout_width="match_parent"
         android:layout_height="175dp"
-        android:clickable="true"
         android:contentDescription="@string/profile_background_image_description"
         android:elevation="20dp"
         android:scaleType="fitXY"
-        app:curvature="20dp"
-        android:focusable="true" />
+        app:curvature="20dp" />
 
 
     <fragment

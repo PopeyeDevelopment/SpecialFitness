@@ -18,6 +18,8 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Build;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.graphics.Palette;
@@ -77,6 +79,7 @@ public class CurvedImageView extends AppCompatImageView {
         static final int GRADIENT_COLOR_START = R.styleable.CurvedImageView_gradientStartColor;
         static final int GRADIENT_COLOR_END = R.styleable.CurvedImageView_gradientEndColor;
         static final int GRAVITY = R.styleable.CurvedImageView_gravity;
+        static final int USER_CHANGEABLE_IMAGE = R.styleable.CurvedImageView_allowUserChangeableImages;
     }
 
     Path clipPath = new Path();
@@ -137,8 +140,6 @@ public class CurvedImageView extends AppCompatImageView {
     public CurvedImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.context = context;
-        this.setImageBitmap(user.getProfileCover());
-        this.setOnClickListener(onClickListener);
         init(attrs);
     }
 
@@ -186,61 +187,16 @@ public class CurvedImageView extends AppCompatImageView {
         /* Default end color is transparent*/
         gradientEndColor = styledAttrs.getColor(Styleable.GRADIENT_COLOR_END, Color.TRANSPARENT);
 
+        if (styledAttrs.hasValue(Styleable.USER_CHANGEABLE_IMAGE)
+                && styledAttrs.getBoolean(Styleable.USER_CHANGEABLE_IMAGE, false)) {
+            this.setOnClickListener(onClickListener);
+        }
+
+
         styledAttrs.recycle();
 
-        //setBackgroundColorFromBitmap();
-    }
-
-    private void setBackgroundColorFromBitmap() {
-        Bitmap bm = null;
-        if (getDrawable() != null &&
-                getDrawable() instanceof BitmapDrawable) {
-            bm = ((BitmapDrawable) this.getDrawable()).getBitmap();
-        } else if (getBackground() != null &&
-                getBackground() instanceof BitmapDrawable) {
-            bm = ((BitmapDrawable) getBackground()).getBitmap();
-        } else if (getDrawable() != null &&
-                getDrawable() instanceof ColorDrawable) {
-            ColorDrawable colorDraw = (ColorDrawable)this.getDrawable();
-            int[] colors = {colorDraw.getColor()};
-            bm = Bitmap.createBitmap(colors, width, height, Bitmap.Config.ARGB_8888);
-        }
-
-        if (bm != null) {
-            pickColorFromBitmap(bm);
-        }
-    }
-
-    private void pickColorFromBitmap(Bitmap bitmap) {
-        Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
-
-            private int defaultColor = 0x000000;
-
-            @Override
-            public void onGenerated(Palette palette) {
-                tintPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-                if (tintMode == TintMode.AUTOMATIC) {
-                    tintPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-                    int rgbColor = Color.WHITE;
-                    if (palette.getDarkVibrantColor(defaultColor) != 0) {
-                        rgbColor = Math.abs(palette.getDarkVibrantColor(defaultColor));
-                    } else if (palette.getDarkMutedColor(defaultColor) != 0) {
-                        rgbColor = Math.abs(palette.getDarkMutedColor(defaultColor));
-                    }
-                    tintPaint.setColor(getColorFromRGBInt(rgbColor));
-                } else {
-                    tintPaint.setColor(tintColor);
-                    tintPaint.setAlpha(tintAlpha);
-                }
-            }
-
-            private int getColorFromRGBInt(final int rgbColor) {
-                int r = (rgbColor >> 16) & 0xFF;
-                int g = (rgbColor >> 8) & 0xFF;
-                int b = rgbColor & 0xFF;
-                return Color.rgb(r, g, b);
-            }
-        });
+        Drawable drawableImage = getContext().getDrawable(R.drawable.strength_image);
+        setImageBitmap(((BitmapDrawable) drawableImage).getBitmap());
     }
 
     @Override
@@ -319,7 +275,6 @@ public class CurvedImageView extends AppCompatImageView {
     public void setImageBitmap(Bitmap bm) {
         super.setImageBitmap(bm);
         this.bitmap = bm;
-        user.setProfileCover(bm);
     }
 
 }

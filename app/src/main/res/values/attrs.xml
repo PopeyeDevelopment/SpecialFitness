@@ -24,6 +24,7 @@
         </attr>
         <attr name="gradientStartColor" format="color"/>
         <attr name="gradientEndColor" format="color"/>
+        <attr name="allowUserChangeableImages" format="boolean" />
     </declare-styleable>
 
     <declare-styleable name="TextAttributes" >

@@ -21,11 +21,7 @@ import uk.co.pped.specialfitness.model.UserModel;
  */
 public class ProfileFragment extends AbstractBaseFragment {
 
-    private final UserModel user;
-
-    public ProfileFragment() {
-        this.user = UserModel.getInstance();
-    }
+    public ProfileFragment() {}
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
