@@ -1,12 +1,7 @@
 package uk.co.pped.specialfitness.components.preferences;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.os.Looper;
 import android.preference.Preference;
-import android.preference.PreferenceManager;
 import android.preference.SwitchPreference;
 import android.util.AttributeSet;
 
@@ -16,16 +11,16 @@ import java.util.List;
  * Created by matthewi on 10/10/2017.
  */
 
-public class PPEDDefaultSwitchPreference extends SwitchPreference {
+public class SettingsDefaultSwitchPreference extends SwitchPreference {
 
     private List<Preference> preferencesContainer;
 
-    public PPEDDefaultSwitchPreference(Context context, AttributeSet attrs) {
+    public SettingsDefaultSwitchPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
         setOnPreferenceChangeListener(preferenceChangeListener);
     }
 
-    public PPEDDefaultSwitchPreference(Context context) {
+    public SettingsDefaultSwitchPreference(Context context) {
         this(context, null);
     }
 
@@ -42,12 +37,14 @@ public class PPEDDefaultSwitchPreference extends SwitchPreference {
         public boolean onPreferenceChange(Preference preference, Object newVal) {
             if (!isChecked()) {
                 for (Preference pref : getPreferencesContainer()) {
-                    if (pref instanceof PPEDListPreferences) {
-
-                        ((PPEDListPreferences) pref).resetToDefaults();
+                    if (pref instanceof SettingsListPreferences) {
+                        ((SettingsListPreferences) pref).resetToDefaults();
+                    } else if (pref instanceof SettingsMultiSelectListPreference) {
+                        ((SettingsMultiSelectListPreference) pref).resetToDefaults();
                     }
                 }
             }
+
             return true;
         }
     };

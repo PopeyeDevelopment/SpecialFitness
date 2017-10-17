@@ -1,14 +1,11 @@
 package uk.co.pped.specialfitness.fragments.settings;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.MultiSelectListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceManager;
-import android.preference.PreferenceScreen;
-import android.preference.SwitchPreference;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.view.LayoutInflater;
@@ -16,20 +13,19 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ListView;
-import android.widget.Switch;
 
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
+import java.util.Map;
 
 import uk.co.pped.specialfitness.R;
-import uk.co.pped.specialfitness.activities.AbstractBaseActivity;
 import uk.co.pped.specialfitness.activities.settings.SettingsFragmentHandler;
-import uk.co.pped.specialfitness.components.preferences.PPEDDefaultSwitchPreference;
+import uk.co.pped.specialfitness.components.preferences.SettingsDefaultSwitchPreference;
+import uk.co.pped.specialfitness.components.preferences.SettingsListPreferences;
+import uk.co.pped.specialfitness.components.preferences.SettingsMultiSelectListPreference;
 import uk.co.pped.specialfitness.utility.ApplicationHelper;
+import uk.co.pped.specialfitness.utility.SettingsMultiSelectListTypes;
 import uk.co.pped.specialfitness.utils.KeyUtils;
 
 /**
@@ -110,11 +106,6 @@ public class SettingsFragment extends AbstractBaseSettingsFragment {
         }
     }
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-    }
-
     private Integer getPreferenceIdToLoad() {
         switch(fragmentType) {
             case SettingsFragmentTypes.FRAGMENT_TYPE_UNKNOWN:
@@ -131,42 +122,14 @@ public class SettingsFragment extends AbstractBaseSettingsFragment {
 
 
     private void setupWeeklyPreferenceConfig() {
-        final PPEDDefaultSwitchPreference defaultSwitch = (PPEDDefaultSwitchPreference) findPreference(KeyUtils.WEEK_DEFAULTS_KEY);
-        final ListPreference weekdayStarts = (ListPreference) findPreference(KeyUtils.WEEKDAY_STARTS_KEY);
-        final MultiSelectListPreference daysAbleToWorkoutList = (MultiSelectListPreference) findPreference(KeyUtils.AVAILABLE_WORKOUT_DAYS_KEY);
+        final SettingsDefaultSwitchPreference defaultSwitch = (SettingsDefaultSwitchPreference) findPreference(KeyUtils.WEEK_DEFAULTS_KEY);
+        final SettingsListPreferences weekdayStarts = (SettingsListPreferences) findPreference(KeyUtils.WEEKDAY_STARTS_KEY);
+        final SettingsMultiSelectListPreference daysAbleToWorkoutList = (SettingsMultiSelectListPreference) findPreference(KeyUtils.AVAILABLE_WORKOUT_DAYS_KEY);
+
         List<Preference> preferencesContainer = new ArrayList<Preference>();
+
         preferencesContainer.add(weekdayStarts);
         preferencesContainer.add(daysAbleToWorkoutList);
         defaultSwitch.setPreferencesContainer(preferencesContainer);
-
-//        defaultSwitch.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-//            @Override
-//            public boolean onPreferenceChange(Preference preference, Object o) {
-//                if (!((SwitchPreference)preference).isChecked()) {
-////                    //sharedPreferences.edit().remove(KeyUtils.WEEKDAY_STARTS_KEY).commit();
-////                    PreferenceManager.setDefaultValues(baseActivity.getBaseContext(), R.xml.week_preferences,true);
-//                }
-//                return true;
-//            }
-//        });
-//
-//        weekdayStarts.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-//            @Override
-//            public boolean onPreferenceChange(Preference preference, Object newValue) {
-//                weekdayStarts.setSummary((String) newValue);
-//                return true;
-//            }
-//        });
-//
-//        daysAbleToWorkoutList.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-//
-//            @Override
-//            public boolean onPreferenceChange(Preference preference, Object newValue) {
-//                daysAbleToWorkoutList.setSummary(((Set<String>) newValue).toString());
-//                return true;
-//            }
-//        });
-
     }
-
 }

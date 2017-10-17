@@ -77,7 +77,6 @@ public class CurvedImageView extends AppCompatImageView {
         static final int GRADIENT_COLOR_START = R.styleable.CurvedImageView_gradientStartColor;
         static final int GRADIENT_COLOR_END = R.styleable.CurvedImageView_gradientEndColor;
         static final int GRAVITY = R.styleable.CurvedImageView_gravity;
-
     }
 
     Path clipPath = new Path();

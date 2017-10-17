@@ -8,13 +8,13 @@
         android:title="Your Week"
         android:layout="@layout/settings_header_layout">
 
-        <uk.co.pped.specialfitness.components.preferences.PPEDDefaultSwitchPreference
+        <uk.co.pped.specialfitness.components.preferences.SettingsDefaultSwitchPreference
             android:title="Use Default Settings"
             android:key="@string/week_defaults"
             android:disableDependentsState="true"
             android:defaultValue="true" />
 
-        <uk.co.pped.specialfitness.components.preferences.PPEDListPreferences
+        <uk.co.pped.specialfitness.components.preferences.SettingsListPreferences
             pped:titleDisabledTextColour="@color/titleDisabledTextColor"
             android:key="@string/week_day_start"
             android:dependency="@string/week_defaults"
@@ -25,7 +25,7 @@
             android:defaultValue="@string/weekday_start_default"
             pped:overridingDefaultValue="@string/weekday_start_default"
             android:layout="@layout/preferences_basic_layout" />
-        <MultiSelectListPreference
+        <uk.co.pped.specialfitness.components.preferences.SettingsMultiSelectListPreference
             android:key="@string/available_workout_days"
             android:dependency="@string/week_defaults"
             android:entries="@array/week_day_start_entries"
@@ -33,9 +33,10 @@
             android:title="When can you exercise?"
             android:summary="%s"
             android:layout="@layout/preferences_basic_layout"
-            android:defaultValue="@array/week_day_start_values"
-            />
-
+            android:defaultValue="@array/days_available_defaults"
+            pped:overridingDefaultValues="@array/days_available_defaults"
+            pped:titleDisabledTextColour="@color/titleDisabledTextColor"
+            pped:EnumlistType="WEEKDAYS"/>
 
     </PreferenceCategory>
 </PreferenceScreen>

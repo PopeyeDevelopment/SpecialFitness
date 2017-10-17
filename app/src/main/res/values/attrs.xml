@@ -26,9 +26,20 @@
         <attr name="gradientEndColor" format="color"/>
     </declare-styleable>
 
-    <declare-styleable name="PPEDListPreferences">
+    <declare-styleable name="TextAttributes" >
         <attr name="titleDisabledTextColour" format="color" />
-        <attr name="summaryDisabledTextColour" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="SettingsListPreferences" >
+        <attr name="titleDisabledTextColour" />
         <attr name="overridingDefaultValue" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="SettingsMultiSelectListPreference" >
+        <attr name="titleDisabledTextColour"/>
+        <attr name="overridingDefaultValues" format="reference" />
+        <attr name="EnumlistType" format="enum">
+            <enum name="WEEKDAYS" value="0" />
+        </attr>
     </declare-styleable>
 </resources>

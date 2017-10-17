@@ -60,5 +60,11 @@
         <item>Friday</item>
         <item>Saturday</item>
     </string-array>
+    <string-array name="days_available_defaults">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+    </string-array>
 
 </resources>
