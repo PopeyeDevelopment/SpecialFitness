@@ -19,6 +19,15 @@
         android:isScrollContainer="true"
         android:orientation="vertical">
 
+        <uk.co.pped.specialfitness.components.CurvedImageView
+            android:id="@+id/profile_cover"
+            android:layout_width="match_parent"
+            android:layout_height="175dp"
+            android:contentDescription="@string/profile_background_image_description"
+            android:elevation="20dp"
+            android:scaleType="fitXY"
+            app:curvature="20dp" />
+
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
