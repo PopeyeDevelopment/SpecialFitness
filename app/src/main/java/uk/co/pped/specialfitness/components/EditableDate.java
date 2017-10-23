@@ -39,9 +39,9 @@ public class EditableDate extends AppCompatEditText{
             @Override
             public void onClick(View v) {
                 DatePickerDialog dialog = new DatePickerDialog(v.getContext(), date,
-                        user.getYearOfBirth(),
-                        calendar.get(Calendar.MONTH),
-                        calendar.get(Calendar.DAY_OF_MONTH));
+                        user.getFromDateOfBirth(Calendar.YEAR),
+                        user.getFromDateOfBirth(Calendar.MONTH),
+                        user.getFromDateOfBirth(Calendar.DAY_OF_MONTH));
 
                 dialog.show();
             }

@@ -8,8 +8,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
-import uk.co.pped.specialfitness.Conf;
-
 /**
  * Created by matthewi on 08/09/2017.
  */
@@ -22,9 +20,10 @@ public final class UserModel extends AbstractBaseModel {
 
     private static final int DEFAULT_AGE = 18;
 
+    private String gymMember;
 
     /** @param gender property for holding the users Gender. Default is "Male". */
-    private String gender = "Male";
+    private String gender;
 
     private Date dateOfBirth;
 
@@ -41,6 +40,14 @@ public final class UserModel extends AbstractBaseModel {
         }
 
         return instance;
+    }
+
+    public void setGymMember(String gymMember) {
+        this.gymMember = gymMember;
+    }
+
+    public String getGymMember() {
+        return gymMember;
     }
 
     public void setProfileCover(Bitmap profileCover) {
@@ -74,14 +81,33 @@ public final class UserModel extends AbstractBaseModel {
      *
      * @return year born or default age year.
      */
-    public int getYearOfBirth() {
+    public int getFromDateOfBirth(int field) {
         Calendar cal = Calendar.getInstance(TimeZone.getDefault());
         if (this.dateOfBirth != null) {
             cal.setTime(this.dateOfBirth);
-            return cal.get(Calendar.YEAR);
         }
-        return cal.get(Calendar.YEAR) - DEFAULT_AGE;
+
+        int result = 0;
+
+        switch (field) {
+            case Calendar.YEAR:
+                result = cal.get(Calendar.YEAR);
+                if (this.dateOfBirth == null) {
+                    result = result - DEFAULT_AGE;
+                }
+                break;
+            case Calendar.MONTH:
+                result = cal.get(Calendar.MONTH);
+                break;
+            case Calendar.DAY_OF_MONTH:
+                result = cal.get(Calendar.DAY_OF_MONTH);
+                break;
+        }
+
+
+        return result;
     }
+
 
     @Override
     public boolean equals(Object obj) {

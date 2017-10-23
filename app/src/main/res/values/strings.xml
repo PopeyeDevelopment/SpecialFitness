@@ -30,7 +30,7 @@
     <string name="dob_help_text"></string>
     <string name="profile_cover">Profile Cover</string>
     <string name="profile_background_image_description">Profile Cover</string>
-    <string name="title_activity_temp_settings">TempSettings</string>
+    <string name="activity_gym_member_text">Gym Member</string>
 
     <!-- Strings related to Settings -->
     <string name="weight_unit_title">Weight</string>
@@ -65,5 +65,4 @@
     <string name="weight_default">kg</string>
     <string name="distance_default">km</string>
     <string name="fluid_intake_default">ml</string>
-
 </resources>

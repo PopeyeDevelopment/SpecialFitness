@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="gender_option">
+        <item>Please Select</item>
         <item>Male</item>
         <item>Female</item>
         <item>Other</item>
-        <item>Decline To State</item>
+        <item>Prefer not to say</item>
     </string-array>
 
+    <string-array name="gym_member_options">
+        <item>Please Select</item>
+        <item>Gym Member</item>
+        <item>Not a Gym Member</item>
+        <item>Prefer not to say</item>
+    </string-array>
 </resources>

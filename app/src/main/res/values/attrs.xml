@@ -43,4 +43,13 @@
             <enum name="WEEKDAYS" value="0" />
         </attr>
     </declare-styleable>
+
+    <declare-styleable name="SingleSelectDialogEditView">
+        <attr name="entries" format="reference" />
+        <attr name="spinnerType" format="integer">
+            <flag name="gender" value="0"/>
+            <flag name="gym" value="1"/>
+        </attr>
+    </declare-styleable>
+
 </resources>
