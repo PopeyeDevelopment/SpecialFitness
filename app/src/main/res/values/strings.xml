@@ -27,6 +27,8 @@
     <string name="gender_header_text">Gender</string>
     <string name="gender_help_text"></string>
     <string name="dob_header_text">Date Of Birth</string>
+    <string name="weight_header_text">Weight</string>
+    <string name="height_header_text">Height</string>
     <string name="dob_help_text"></string>
     <string name="profile_cover">Profile Cover</string>
     <string name="profile_background_image_description">Profile Cover</string>
@@ -42,6 +44,7 @@
     <string name="profile_section_header">User</string>
     <string name="general_section_header">General</string>
     <string name="your_profile_header">Profile</string>
+    <string name="weight_increment_title">Weight Increment</string>
 
     <string name="week_preferences">Your Week</string>
     <string name="weekday_start_title">Week Start Day</string>
@@ -57,12 +60,24 @@
     <string name="distance_units_key">uk.co.pped.specialfitness.key.distance_units</string>
     <string name="fluid_intake_units_key">uk.co.pped.specialfitness.key.fluid_intake_units</string>
 
+    <string name="default_weight_increment_key">uk.co.pped.specialfitness.key.weight_increment</string>
 
 
-    <!-- Preferences Defaults -->
+
+    <!-- Preferences Values and Defaults -->
     <string name="weekday_start_default">Monday</string>
-    <string name="height_default">cm</string>
-    <string name="weight_default">kg</string>
+
+    <string name="height_default">@string/height_cm</string>
+    <string name="height_cm">cm</string>
+    <string name="height_ft">ft</string>
+
+    <string name="weight_default">@string/weight_kg</string>
+    <string name="weight_kg">kg</string>
+    <string name="weight_stone">stone</string>
+    <string name="weight_lbs">lbs</string>
+
     <string name="distance_default">km</string>
+
     <string name="fluid_intake_default">ml</string>
+
 </resources>

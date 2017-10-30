@@ -33,7 +33,7 @@
         <item name="android:textColor">@color/titleTextColor</item>
     </style>
     <style name="SettingsSummaryTheme" parent="SettingsBasicTheme">
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/summaryTextColor</item>
     </style>
     <style name="SettingsHeaderTheme" parent="SettingsBasicTheme">

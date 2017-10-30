@@ -9,6 +9,7 @@ import android.util.Log;
 import com.google.android.gms.ads.AdRequest;
 
 import uk.co.pped.specialfitness.BuildConfig;
+import uk.co.pped.specialfitness.utils.KeyboardUtils;
 
 /**
  * Created by matthewi on 08/09/2017.
@@ -77,5 +78,13 @@ public final class ApplicationHelper extends Application {
         }
 
         return null;
+    }
+
+    public static Object getService(String service) {
+        return context.getSystemService(service);
+    }
+
+    public static KeyboardUtils getKeyboardUtils() {
+        return KeyboardUtils.getInstance();
     }
 }

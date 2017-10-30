@@ -4,8 +4,9 @@
     xmlns:pped="http://schemas.android.com/apk/res-auto" >
 
 
+
     <PreferenceCategory
-        android:title="Units"
+        android:title="Unit Settings"
         android:layout="@layout/settings_header_layout">
 
         <uk.co.pped.specialfitness.components.preferences.SettingsDefaultSwitchPreference
@@ -13,6 +14,12 @@
             android:key="@string/units_defaults"
             android:disableDependentsState="true"
             android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Units"
+        android:layout="@layout/settings_header_layout">
 
         <uk.co.pped.specialfitness.components.preferences.SettingsListPreferences
             android:key="@string/weight_units_key"
@@ -59,5 +66,17 @@
             pped:overridingDefaultValue="@string/fluid_intake_default"
             pped:titleDisabledTextColour="@color/titleDisabledTextColor" />
 
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Unit Increments"
+        android:layout="@layout/settings_header_layout">>
+        <EditTextPreference
+            android:key="@string/default_weight_increment_key"
+            android:title="@string/weight_increment_title"
+            android:summary="%s"
+            android:inputType="numberDecimal"
+            android:dependency="@string/units_defaults"
+            />
     </PreferenceCategory>
 </PreferenceScreen>

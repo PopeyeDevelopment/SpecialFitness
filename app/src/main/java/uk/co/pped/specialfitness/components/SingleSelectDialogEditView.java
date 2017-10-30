@@ -43,15 +43,27 @@ public class SingleSelectDialogEditView extends AppCompatSpinner {
         spinnerSetup();
     }
 
+    /**
+     * Setup our spinner based on the attributes passed in
+     */
     private void spinnerSetup() {
         String userValForType = getValueFromUserModel();
         this.arrayAdapter = new ArrayAdapter<String>(getContext(), R.layout.gender_spinner_text_view, entries) {
 
+            /**
+             * We want to be able to set the items we want to be disabled so we
+             * have to make it so all items in our list or can be disabled by
+             * setting this option to false.
+             */
             @Override
             public boolean areAllItemsEnabled() {
                 return false;
             }
 
+            /**
+             * Disable the very first option in the list. Assumption is
+             * that this will always be something like "Please Select".
+             */
             @Override
             public boolean isEnabled(int position) {
                 if (position == 0) {
@@ -69,6 +81,10 @@ public class SingleSelectDialogEditView extends AppCompatSpinner {
         this.setOnItemSelectedListener(new OnItemSelectListener());
     }
 
+    /**
+     * Based on the type of Spinner we are obtain the current value from
+     * the UserModel and return.
+     */
     private String getValueFromUserModel() {
         switch (type) {
             case GENDER_SPINNER_TYPE:
@@ -80,6 +96,9 @@ public class SingleSelectDialogEditView extends AppCompatSpinner {
         }
     }
 
+    /**
+     * Based on the type of Spinner we are set the value on the user model.
+     */
     private void setValueOnUserModel(String val) {
         switch (type) {
             case GENDER_SPINNER_TYPE:
@@ -93,6 +112,9 @@ public class SingleSelectDialogEditView extends AppCompatSpinner {
         }
     }
 
+    /**
+     * Set all the entries into our local collections list.
+     */
     private void setEntries() {
         if (entries == null) {
             entries = new ArrayList<String>();

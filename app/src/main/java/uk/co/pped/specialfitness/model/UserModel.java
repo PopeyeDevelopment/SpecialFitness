@@ -5,14 +5,24 @@ import android.graphics.Bitmap;
 
 
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.TimeZone;
+
+import uk.co.pped.specialfitness.utility.Unit;
 
 /**
  * Created by matthewi on 08/09/2017.
  */
 
 public final class UserModel extends AbstractBaseModel {
+
+    private static final class UnitMapKeys {
+        public static final String WEIGHT_KEY = "user_weight";
+        public static final String HEIGHT_KEY = "user_height";
+    }
 
     private static UserModel instance;
 
@@ -26,6 +36,11 @@ public final class UserModel extends AbstractBaseModel {
     private String gender;
 
     private Date dateOfBirth;
+
+    /** Property for holding the Users Weight value */
+    private Unit<String, String, Double> weight = Unit.emptyUnitForType(Unit.TYPE_WEIGHT);
+
+    private Unit<String, String, Double> height = Unit.emptyUnitForType(Unit.TYPE_HEIGHT);
 
     private UserModel() {
         if (instance != null) {
@@ -72,6 +87,26 @@ public final class UserModel extends AbstractBaseModel {
 
     public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public void setWeight(Unit<String, String, Double> weight) {
+        if (weight.getType() == Unit.TYPE_WEIGHT) {
+            this.weight = weight;
+        }
+    }
+
+    public Unit<String, String, Double> getWeight() {
+        return weight;
+    }
+
+    public void setHeight(Unit<String, String, Double> height) {
+        if (height.getType() == Unit.TYPE_HEIGHT) {
+            this.height = height;
+        }
+    }
+
+    public Unit<String, String, Double> getHeight() {
+        return height;
     }
 
     /**

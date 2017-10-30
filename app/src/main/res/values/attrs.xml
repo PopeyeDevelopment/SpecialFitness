@@ -44,11 +44,23 @@
         </attr>
     </declare-styleable>
 
+    <declare-styleable name="SettingsEditTextPreference" >
+        <attr name="titleDisabledTextColour" />
+        <attr name="overridingDefaultValue" />
+    </declare-styleable>
+
     <declare-styleable name="SingleSelectDialogEditView">
         <attr name="entries" format="reference" />
         <attr name="spinnerType" format="integer">
             <flag name="gender" value="0"/>
             <flag name="gym" value="1"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="NumericEditableView">
+        <attr name="fieldType" format="integer">
+            <flag name="weight" value="0"/>
+            <flag name="height" value="1"/>
         </attr>
     </declare-styleable>
 

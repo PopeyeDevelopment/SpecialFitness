@@ -45,7 +45,6 @@ public class SettingsFragment extends AbstractBaseSettingsFragment {
     private ActionBar actionBar;
     private SettingsFragmentHandler baseActivity;
     private int fragmentType;
-    private  SharedPreferences sharedPreferences;
 
     public SettingsFragment() {}
 
@@ -71,7 +70,6 @@ public class SettingsFragment extends AbstractBaseSettingsFragment {
         }
 
         PreferenceManager.setDefaultValues(baseActivity.getBaseContext(), R.xml.week_preferences, false);
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(ApplicationHelper.getContext());
 
     }
 

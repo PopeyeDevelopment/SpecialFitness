@@ -7,9 +7,9 @@
         <item>Pounds (lbs)</item>
     </string-array>
     <string-array name="weight_unit_values">
-        <item>@string/weight_default</item>
-        <item>Stone</item>
-        <item>lbs</item>
+        <item>@string/weight_kg</item>
+        <item>@string/weight_stone</item>
+        <item>@string/weight_lbs</item>
     </string-array>
 
     <!-- Height Units Values and Entries -->
@@ -18,8 +18,8 @@
         <item>Centimeters (cm)</item>
     </string-array>
     <string-array name="height_unit_values">
-        <item>ft-inch</item>
-        <item>@string/height_default</item>
+        <item>@string/height_ft</item>
+        <item>@string/height_cm</item>
     </string-array>
 
     <!-- Distance Units Values and Entries -->
