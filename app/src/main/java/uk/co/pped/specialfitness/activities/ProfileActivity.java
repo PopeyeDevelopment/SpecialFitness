@@ -22,10 +22,8 @@ import uk.co.pped.specialfitness.model.UserModel;
  */
 public class ProfileActivity extends AbstractBaseActivity implements OnFragmentInteractionListener {
 
-    private UserModel user;
 
     public ProfileActivity() {
-        this.user = UserModel.getInstance();
     }
 
     @Override
@@ -35,7 +33,7 @@ public class ProfileActivity extends AbstractBaseActivity implements OnFragmentI
         setSupportedActionBar();
 
         // If user has no profile cover then hide image view
-        if (user.getProfileCover() == null) {
+        if (UserModel.getInstance().getProfileCover() == null) {
             CurvedImageView view = findViewById(R.id.profile_cover);
             view.setVisibility(View.GONE);
         }

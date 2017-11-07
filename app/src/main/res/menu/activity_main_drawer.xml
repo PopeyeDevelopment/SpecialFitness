@@ -20,9 +20,9 @@
         <menu>
             <group android:checkableBehavior="single">
             <item
-                android:id="@+id/nav_workout_planner"
+                android:id="@+id/nav_workouts"
                 android:icon="@drawable/ic_workout_planner"
-                android:title="@string/nav_workout_planner" />
+                android:title="@string/nav_workouts" />
             <item
                 android:id="@+id/nav_workout_saved"
                 android:icon="@drawable/ic_saved_workouts"

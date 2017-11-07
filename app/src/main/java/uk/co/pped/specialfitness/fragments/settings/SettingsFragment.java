@@ -22,6 +22,7 @@ import java.util.Map;
 import uk.co.pped.specialfitness.R;
 import uk.co.pped.specialfitness.activities.settings.SettingsFragmentHandler;
 import uk.co.pped.specialfitness.components.preferences.SettingsDefaultSwitchPreference;
+import uk.co.pped.specialfitness.components.preferences.SettingsEditTextPreference;
 import uk.co.pped.specialfitness.components.preferences.SettingsListPreferences;
 import uk.co.pped.specialfitness.components.preferences.SettingsMultiSelectListPreference;
 import uk.co.pped.specialfitness.utility.ApplicationHelper;
@@ -138,12 +139,14 @@ public class SettingsFragment extends AbstractBaseSettingsFragment {
         final SettingsListPreferences heightList = (SettingsListPreferences) findPreference(KeyUtils.UNITS_HEIGHT_KEY);
         final SettingsListPreferences distanceList = (SettingsListPreferences) findPreference(KeyUtils.UNITS_DISTANCE_KEY);
         final SettingsListPreferences fluidInstakeList = (SettingsListPreferences) findPreference(KeyUtils.UNITS_FLUID_INTAKE_KEY);
+        final SettingsEditTextPreference weightIncrement = (SettingsEditTextPreference) findPreference(KeyUtils.UNITS_WEIGHT_INCREMENTS_KEY);
 
         List<Preference> preferencesContainer = new ArrayList<Preference>();
         preferencesContainer.add(weightList);
         preferencesContainer.add(heightList);
         preferencesContainer.add(distanceList);
         preferencesContainer.add(fluidInstakeList);
+        preferencesContainer.add(weightIncrement);
         defaultSwitch.setPreferencesContainer(preferencesContainer);
     }
 }

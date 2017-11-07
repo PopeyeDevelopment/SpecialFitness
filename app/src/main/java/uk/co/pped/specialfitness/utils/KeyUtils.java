@@ -27,4 +27,6 @@ public interface KeyUtils {
     public static final String UNITS_DISTANCE_KEY = getStringFromResId(R.string.distance_units_key);
     public static final String UNITS_FLUID_INTAKE_KEY = getStringFromResId(R.string.fluid_intake_units_key);
 
+    public static final String UNITS_WEIGHT_INCREMENTS_KEY = getStringFromResId(R.string.default_weight_increment_key);
+
 }

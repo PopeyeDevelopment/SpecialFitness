@@ -71,12 +71,15 @@
     <PreferenceCategory
         android:title="Unit Increments"
         android:layout="@layout/settings_header_layout">>
-        <EditTextPreference
+        <uk.co.pped.specialfitness.components.preferences.SettingsEditTextPreference
             android:key="@string/default_weight_increment_key"
             android:title="@string/weight_increment_title"
-            android:summary="%s"
+            android:summary="Set the weight increment value."
             android:inputType="numberDecimal"
             android:dependency="@string/units_defaults"
+            android:defaultValue="@string/default_weight_increment"
+            pped:titleDisabledTextColour="@color/titleDisabledTextColor"
+            pped:overridingDefaultValue="@string/default_weight_increment"
             />
     </PreferenceCategory>
 </PreferenceScreen>

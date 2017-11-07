@@ -41,6 +41,8 @@ public class SettingsDefaultSwitchPreference extends SwitchPreference {
                         ((SettingsListPreferences) pref).resetToDefaults();
                     } else if (pref instanceof SettingsMultiSelectListPreference) {
                         ((SettingsMultiSelectListPreference) pref).resetToDefaults();
+                    } else if (pref instanceof SettingsEditTextPreference) {
+                        ((SettingsEditTextPreference) pref).resetToDefaults();
                     }
                 }
             }

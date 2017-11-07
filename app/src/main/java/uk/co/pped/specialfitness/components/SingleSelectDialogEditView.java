@@ -17,6 +17,7 @@ import java.util.Collections;
 
 import uk.co.pped.specialfitness.R;
 import uk.co.pped.specialfitness.model.UserModel;
+import uk.co.pped.specialfitness.utility.ApplicationHelper;
 
 /**
  * Created by matthewi on 18/10/2017.
@@ -137,9 +138,8 @@ public class SingleSelectDialogEditView extends AppCompatSpinner {
 
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-                String selectedVal = parent.getItemAtPosition(pos).toString();
-                setValueOnUserModel(selectedVal);
-                Toast.makeText(view.getContext(), selectedVal, Toast.LENGTH_LONG).show();
+            final String selectedVal = parent.getItemAtPosition(pos).toString();
+            setValueOnUserModel(selectedVal);
         }
 
         @Override

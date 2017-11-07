@@ -106,8 +106,8 @@ public class MainActivity extends AbstractBaseActivity
 
         } else if (id == R.id.nav_water_diary) {
 
-        } else if (id == R.id.nav_workout_planner) {
-
+        } else if (id == R.id.nav_workouts) {
+            intent = new Intent(this, WorkoutActivity.class);
         } else if (id == R.id.nav_workout_saved) {
 
         }
