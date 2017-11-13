@@ -84,6 +84,8 @@ public class SettingsActivity extends AppCompatPreferenceActivity implements Abs
                 } else if (headerId == R.id.your_profile) {
                     // For "Your Profile" we'll override the intent and send the user to their profile.
                     intent = new Intent(this, ProfileActivity.class);
+                } else if (headerId == R.id.your_workout_preferences) {
+                    intent.putExtra(SettingsFragmentTypes.FRAGMENT_TYPE_KEY, SettingsFragmentTypes.FRAGMENT_TYPE_WORKOUT_PREFERENCES);
                 }
 
                 if (intent != null) {

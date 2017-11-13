@@ -21,28 +21,28 @@
         <item name="android:background">@android:color/transparent</item>
     </style>
 
-    <style name="ProfileFragmentTheme">
-        <item name="android:textColor">@color/summaryTextColor</item>
-        <item name="android:textSize">15sp</item>
+    <style name="NextPreviousControllerTheme">
+        <item name="android:textSize">@dimen/LargeBaseTextSize</item>
+        <item name="android:textColor">@color/baseTextColor</item>
     </style>
 
     <style name="SettingsBasicTheme">
     </style>
     <style name="SettingsTitleTheme" parent="SettingsBasicTheme">
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">@dimen/TitleTextSize</item>
         <item name="android:textColor">@color/titleTextColor</item>
     </style>
     <style name="SettingsSummaryTheme" parent="SettingsBasicTheme">
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">@dimen/SummaryTextSize</item>
         <item name="android:textColor">@color/summaryTextColor</item>
     </style>
     <style name="SettingsHeaderTheme" parent="SettingsBasicTheme">
         <item name="android:textColor">@color/colorPrimary</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">@dimen/HeaderTextSize</item>
     </style>
     <style name="SettingsSuperHeaderTheme" parent="SettingsBasicTheme">
         <item name="android:textColor">@color/colorPrimary</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">@dimen/LargeHeaderTextSize</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

@@ -42,5 +42,13 @@
             android:name="type"
             android:value="intent"/>
     </header>
+    <header
+        android:title="@string/workout_settings_header"
+        android:summary="Change the default settings for your workouts."
+        android:id="@+id/your_workout_preferences">
+        <extra
+            android:name="type"
+            android:value="intent" />
+    </header>
 
 </preference-headers>

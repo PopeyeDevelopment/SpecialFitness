@@ -1,6 +1,4 @@
 <resources>
-    <integer name="valtam">10</integer>
-
     <string name="app_name">Special Fitness</string>
 
     <string name="action_settings">Settings</string>
@@ -56,6 +54,7 @@
     <string name="general_section_header">General</string>
     <string name="your_profile_header">Profile</string>
     <string name="weight_increment_title">Weight Increment</string>
+    <string name="workout_settings_header">Workout</string>
 
     <string name="week_preferences">Your Week</string>
     <string name="weekday_start_title">Week Start Day</string>
@@ -71,8 +70,10 @@
     <string name="distance_units_key">uk.co.pped.specialfitness.key.distance_units</string>
     <string name="fluid_intake_units_key">uk.co.pped.specialfitness.key.fluid_intake_units</string>
 
-    <string name="default_weight_increment_key">uk.co.pped.specialfitness.key.weight_increment</string>
+    <string name="workout_default_switch_key">uk.co.pped.specialfitness.key.workout_default_switch</string>
 
+    <string name="default_weight_increment_key">uk.co.pped.specialfitness.key.weight_increment</string>
+    <string name="default_number_of_sets">uk.co.pped.specialfitness.key.number_of_sets</string>
 
 
     <!-- Preferences Values and Defaults -->

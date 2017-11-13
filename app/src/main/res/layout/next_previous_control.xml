@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/next_previous_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    tools:context="uk.co.pped.specialfitness.components.NextPreviousControl">
+
+    <ImageView
+        android:id="@+id/previousBtn"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_gravity="left"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/left_chevron_icon" />
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:clickable="true"
+        android:textSize="18sp"
+        android:theme="@style/NextPreviousControllerTheme" />
+
+    <ImageView
+        android:id="@+id/nextBtn"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_gravity="left"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/right_chevron_icon"
+        android:layout_weight="1"
+        android:clickable="true" />
+
+</android.support.v7.widget.LinearLayoutCompat>

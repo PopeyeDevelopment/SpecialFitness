@@ -41,6 +41,7 @@ public class SettingsFragment extends AbstractBaseSettingsFragment {
         public static final int FRAGMENT_TYPE_UNKNOWN = -1;
         public static final int FRAGMENT_TYPE_UNITS_PREFERENCES = 0;
         public static final int FRAGMENT_TYPE_WEEK_PREFERENCES = 1;
+        public static final int FRAGMENT_TYPE_WORKOUT_PREFERENCES = 2;
     }
 
     private ActionBar actionBar;
@@ -70,8 +71,9 @@ public class SettingsFragment extends AbstractBaseSettingsFragment {
             }
         }
 
+        PreferenceManager.setDefaultValues(baseActivity.getBaseContext(), R.xml.units_preferences, false);
         PreferenceManager.setDefaultValues(baseActivity.getBaseContext(), R.xml.week_preferences, false);
-
+        PreferenceManager.setDefaultValues(baseActivity.getBaseContext(), R.xml.workout_preferences, false);
     }
 
     public void onCreate(Bundle savedInstanceState) {
@@ -101,6 +103,9 @@ public class SettingsFragment extends AbstractBaseSettingsFragment {
             case SettingsFragmentTypes.FRAGMENT_TYPE_WEEK_PREFERENCES:
                 setupWeeklyPreferenceConfig();
                 break;
+            case SettingsFragmentTypes.FRAGMENT_TYPE_WORKOUT_PREFERENCES:
+                setupWorkoutPreferenceConfig();
+                break;
             default:
                 break;
         }
@@ -115,6 +120,8 @@ public class SettingsFragment extends AbstractBaseSettingsFragment {
                 return R.xml.units_preferences;
             case SettingsFragmentTypes.FRAGMENT_TYPE_WEEK_PREFERENCES:
                 return R.xml.week_preferences;
+            case SettingsFragmentTypes.FRAGMENT_TYPE_WORKOUT_PREFERENCES:
+                return R.xml.workout_preferences;
             default:
                 return null;
         }
@@ -139,13 +146,20 @@ public class SettingsFragment extends AbstractBaseSettingsFragment {
         final SettingsListPreferences heightList = (SettingsListPreferences) findPreference(KeyUtils.UNITS_HEIGHT_KEY);
         final SettingsListPreferences distanceList = (SettingsListPreferences) findPreference(KeyUtils.UNITS_DISTANCE_KEY);
         final SettingsListPreferences fluidInstakeList = (SettingsListPreferences) findPreference(KeyUtils.UNITS_FLUID_INTAKE_KEY);
-        final SettingsEditTextPreference weightIncrement = (SettingsEditTextPreference) findPreference(KeyUtils.UNITS_WEIGHT_INCREMENTS_KEY);
 
         List<Preference> preferencesContainer = new ArrayList<Preference>();
         preferencesContainer.add(weightList);
         preferencesContainer.add(heightList);
         preferencesContainer.add(distanceList);
         preferencesContainer.add(fluidInstakeList);
+        defaultSwitch.setPreferencesContainer(preferencesContainer);
+    }
+
+    private void setupWorkoutPreferenceConfig() {
+        final SettingsDefaultSwitchPreference defaultSwitch = (SettingsDefaultSwitchPreference) findPreference(KeyUtils.WORKOUT_DEFAULTS_KEY);
+        final SettingsEditTextPreference weightIncrement = (SettingsEditTextPreference) findPreference(KeyUtils.WORKOUT_WEIGHT_INCREMENTS_KEY);
+
+        List<Preference> preferencesContainer = new ArrayList<Preference>();
         preferencesContainer.add(weightIncrement);
         defaultSwitch.setPreferencesContainer(preferencesContainer);
     }

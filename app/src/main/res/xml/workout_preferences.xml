@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:pped="http://schemas.android.com/apk/res-auto" >
+
+    <PreferenceCategory
+        android:title="Workout Settings"
+        android:layout="@layout/settings_header_layout">
+
+        <uk.co.pped.specialfitness.components.preferences.SettingsDefaultSwitchPreference
+            android:title="Use Default Settings"
+            android:key="@string/workout_default_switch_key"
+            android:disableDependentsState="true"
+            android:defaultValue="true" />
+
+        <uk.co.pped.specialfitness.components.preferences.SettingsEditTextPreference
+            android:key="@string/default_weight_increment_key"
+            android:title="@string/weight_increment_title"
+            android:summary="Set the weight increment value."
+            android:inputType="numberDecimal"
+            android:dependency="@string/workout_default_switch_key"
+            android:defaultValue="@string/default_weight_increment"
+            pped:titleDisabledTextColour="@color/titleDisabledTextColor"
+            pped:overridingDefaultValue="@string/default_weight_increment"
+            />
+    </PreferenceCategory>
+
+</PreferenceScreen>
