@@ -17,6 +17,8 @@ public interface KeyUtils {
     public static final String GENDER = Conf.PACKAGE + ".key.GENDER";
     public static final String NICKNAME = Conf.PACKAGE + ".key.NICKNAME";
 
+    public static final String FIRST_TIME_LAUNCH_KEY = getStringFromResId(R.string.first_time_launch_key);
+
     public static final String WEEK_DEFAULTS_KEY = getStringFromResId(R.string.week_defaults);
     public static final String WEEKDAY_STARTS_KEY = getStringFromResId(R.string.week_day_start);
     public static final String AVAILABLE_WORKOUT_DAYS_KEY = getStringFromResId(R.string.available_workout_days);

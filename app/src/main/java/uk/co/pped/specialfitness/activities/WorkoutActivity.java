@@ -11,6 +11,7 @@ import java.util.Set;
 import uk.co.pped.specialfitness.R;
 import uk.co.pped.specialfitness.components.NextPreviousControl;
 import uk.co.pped.specialfitness.utility.ApplicationHelper;
+import uk.co.pped.specialfitness.utility.PrefManager;
 
 /**
  * Created by matthewi on 31/10/2017.
@@ -18,9 +19,12 @@ import uk.co.pped.specialfitness.utility.ApplicationHelper;
 
 public class WorkoutActivity extends AbstractBaseActivity {
 
+    private PrefManager prefManager;
+    private SharedPreferences sharedPreferences;
+
     private NextPreviousControl workoutDateController;
     private TextView workoutDayLabel;
-    private SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(ApplicationHelper.getContext());
+
     public WorkoutActivity() {}
 
     @Override
@@ -28,6 +32,8 @@ public class WorkoutActivity extends AbstractBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.workout_activity);
         setSupportedActionBar();
+        prefManager = new PrefManager(this);
+        sharedPreferences = prefManager.getSharedPreferences();
         init();
     }
 

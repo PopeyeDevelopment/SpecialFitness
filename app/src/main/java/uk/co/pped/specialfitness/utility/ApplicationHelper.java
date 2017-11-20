@@ -23,6 +23,7 @@ public final class ApplicationHelper extends Application {
 
     public static final String FLAVOR_PAID = "paid";
 
+    /** This is an instance of the Application Context not the current context. */
     private static Context context;
 
     public void onCreate() {

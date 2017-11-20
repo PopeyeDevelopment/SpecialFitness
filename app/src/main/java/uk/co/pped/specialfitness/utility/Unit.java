@@ -2,25 +2,23 @@ package uk.co.pped.specialfitness.utility;
 
 import static java.lang.annotation.RetentionPolicy.SOURCE;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.support.annotation.StringDef;
 
 import java.lang.annotation.Retention;
 
-import uk.co.pped.specialfitness.R;
 
 /**
  * Created by matthewi on 26/10/2017.
  */
 
-public class Unit<A, B, C> {
+public class Unit<A, B, C> extends Object {
 
     private static final Context context = ApplicationHelper.getContext();
 
     @Retention(SOURCE)
     @StringDef({TYPE_WEIGHT, TYPE_HEIGHT})
-    public @interface UnitTypes {
+    private @interface UnitTypes {
     }
 
     public static final String TYPE_WEIGHT = "weight";
@@ -106,6 +104,9 @@ public class Unit<A, B, C> {
         return equals;
     }
 
+    /**
+     * @return a hash code value for the object
+     */
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -118,15 +119,24 @@ public class Unit<A, B, C> {
         return result;
     }
 
+    /**
+     * @return a String representation of the object incorporating type, description and value.
+     */
     @Override
     public String toString() {
         return type.toString() + "_" + description.toString() + "_" + value.toString();
     }
 
+    /**
+     * @return a string display friend representation of the object incorporating value and description.
+     */
     public String toDisplayString() {
         return value.toString() + " " + description.toString();
     }
 
+    /**
+     * @return a String representation of the objects value.
+     */
     public String toValueString() {
         return value.toString();
     }

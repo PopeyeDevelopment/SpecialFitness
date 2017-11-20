@@ -5,12 +5,12 @@ import android.graphics.Bitmap;
 
 
 import java.util.Calendar;
-import java.util.Collections;
 import java.util.Date;
-import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.TimeZone;
 
+import uk.co.pped.specialfitness.model.workout.WorkoutModel;
 import uk.co.pped.specialfitness.utility.Unit;
 
 /**
@@ -28,6 +28,11 @@ public final class UserModel extends AbstractBaseModel {
 
     private Bitmap profileCover;
 
+    // TODO: Create getters and setters for this field
+    /** Field for whether the user is logged in or not
+     * if in offline mode than user is not logged in. */
+    private boolean loggedIn;
+
     private static final int DEFAULT_AGE = 18;
 
     private String gymMember;
@@ -41,6 +46,11 @@ public final class UserModel extends AbstractBaseModel {
     private Unit<String, String, Double> weight = Unit.emptyUnitForType(Unit.TYPE_WEIGHT);
 
     private Unit<String, String, Double> height = Unit.emptyUnitForType(Unit.TYPE_HEIGHT);
+
+    private Map<String, List<WorkoutModel>> workouts;
+
+    // TODO: Create NutritionModel and implement
+    //private List<NutritionModel> nutrition;
 
     private UserModel() {
         if (instance != null) {
@@ -116,7 +126,7 @@ public final class UserModel extends AbstractBaseModel {
      *
      * @return year born or default age year.
      */
-    public int getFromDateOfBirth(int field) {
+    public int getFieldFromDateOfBirth(int field) {
         Calendar cal = Calendar.getInstance(TimeZone.getDefault());
         if (this.dateOfBirth != null) {
             cal.setTime(this.dateOfBirth);
@@ -143,10 +153,13 @@ public final class UserModel extends AbstractBaseModel {
         return result;
     }
 
-
     @Override
     public boolean equals(Object obj) {
         return super.equals(obj);
     }
 
+    @Override
+    public String toString() {
+        return null;
+    }
 }

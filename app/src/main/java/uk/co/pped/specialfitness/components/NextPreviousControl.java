@@ -5,7 +5,9 @@ import android.content.Context;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -36,8 +38,8 @@ public class NextPreviousControl extends LinearLayoutCompat {
         }
     };
 
-    private ImageView nextBtn;
-    private ImageView previousBtn;
+    private ImageButton nextBtn;
+    private ImageButton previousBtn;
     private TextView label;
     private OnChangeLisener listener;
 
@@ -74,7 +76,7 @@ public class NextPreviousControl extends LinearLayoutCompat {
     }
 
     private void setupNextBtn() {
-        this.nextBtn = (ImageView)findViewById(R.id.nextBtn);
+        this.nextBtn = (ImageButton) findViewById(R.id.nextBtn);
         nextBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,7 +90,7 @@ public class NextPreviousControl extends LinearLayoutCompat {
     }
 
     private void setupPreviousBtn() {
-        this.previousBtn = (ImageView)findViewById(R.id.previousBtn);
+        this.previousBtn = (ImageButton) findViewById(R.id.previousBtn);
         previousBtn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {

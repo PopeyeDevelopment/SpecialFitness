@@ -60,6 +60,7 @@
     <string name="weekday_start_title">Week Start Day</string>
 
     <!-- Preference Keys -->
+    <string name="first_time_launch_key">uk.co.pped.specialfitness.key.first_time_launch</string>
     <string name="week_defaults">uk.co.pped.specialfitness.key.week_defaults</string>
     <string name="week_day_start">uk.co.pped.specialfitness.key.week_day_start</string>
     <string name="available_workout_days">uk.co.pped.specialfitness.key.available_workout_days</string>

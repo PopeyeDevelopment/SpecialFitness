@@ -8,34 +8,40 @@
     android:orientation="horizontal"
     tools:context="uk.co.pped.specialfitness.components.NextPreviousControl">
 
-    <ImageView
+    <ImageButton
         android:id="@+id/previousBtn"
-        android:layout_width="0dp"
-        android:layout_height="35dp"
-        android:layout_gravity="left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center"
         android:layout_weight="1"
-        android:clickable="true"
+        android:background="@null"
         android:contentDescription="@string/app_name"
         android:src="@drawable/left_chevron_icon" />
 
     <TextView
         android:id="@+id/label"
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="5dp"
         android:clickable="true"
+        android:textAlignment="center"
+        android:textAllCaps="true"
         android:textSize="18sp"
         android:theme="@style/NextPreviousControllerTheme" />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/nextBtn"
-        android:layout_width="0dp"
-        android:layout_height="35dp"
-        android:layout_gravity="left"
-        android:contentDescription="@string/app_name"
-        android:src="@drawable/right_chevron_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_gravity="center"
         android:layout_weight="1"
-        android:clickable="true" />
+        android:background="@null"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/right_chevron_icon" />
 
 </android.support.v7.widget.LinearLayoutCompat>
