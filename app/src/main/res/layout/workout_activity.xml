@@ -40,15 +40,20 @@
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/workout_action"
-            android:layout_width="wrap_content"
+
+        <com.github.clans.fab.FloatingActionMenu
+            android:id="@+id/workout_action_menu"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:clickable="true"
             android:layout_margin="@dimen/fab_margin"
+            android:clickable="true"
             app:srcCompat="@android:drawable/ic_menu_add"
-            />
+            app:menu_colorNormal="@color/colorAccent"
+            app:menu_colorPressed="@color/colorAccent">
+
+        </com.github.clans.fab.FloatingActionMenu>
     </android.support.design.widget.CoordinatorLayout>
+
 
 </LinearLayout>

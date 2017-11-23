@@ -11,4 +11,9 @@
     <color name="titleTextColor">#000000</color>
     <color name="titleDisabledTextColor">#737373</color>
     <color name="summaryDisabledTextColor">#737373</color>
+
+    <!-- Action button colors -->
+    <color name="actionBtnNormal">@color/colorAccent</color>
+    <color name="actionBtnPressed">@color/colorAccent</color>
+
 </resources>
